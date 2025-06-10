@@ -1,0 +1,33 @@
+[project]
+name = "Neuro-Songs"
+version = "0.1.0"
+description = "Formatting Neuro songs to be better in media players"
+authors = [{ name = "Matthieu Basset", email = "bassetmatt@gmail.com" }]
+dependencies = [
+    "mutagen>=1.47.0",
+    "pillow>=11.2.1",
+    "loguru>=0.7.3",
+    "polars>=1.30.0",
+    "tqdm>=4.67.1",
+    "pyyaml>=6.0.2",
+]
+requires-python = ">=3.11, <3.13"
+readme = "README.md"
+license-files = ["LICENSE-APACHE", "LICENSE-MIT"]
+
+[project.scripts] # Shortcuts, have a command for main run so that it emulates a "real" run
+generate = "neuro.run:main"
+detect = "neuro.new_batch:main"
+thumbnails = "neuro.thumbnails:main"
+thumbnails-old = "neuro.thumbnails:generate_oldge"
+json-to-csv = "neuro.json_to_csv:update_csv"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[dependency-groups]
+dev = ["ipykernel>=6.29.5"]
