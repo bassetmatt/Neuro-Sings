@@ -98,7 +98,7 @@ def get_date(groups: dict[str, str]) -> str:
 
 
 def extract_common(file: Path, regexes: list[str]) -> tuple[str, SongEntry]:
-    date = None
+    data = {}
     for i, pat in enumerate(regexes):
         matched = re.match(pat, str(file.name))
         if matched is None:
@@ -112,13 +112,13 @@ def extract_common(file: Path, regexes: list[str]) -> tuple[str, SongEntry]:
             logger.warning(f"File '{file.name} is an outlier")
 
         data = {
-            "Artist": artist.title(),
-            "Song": song.title(),
+            "Artist": artist,
+            "Song": song,
             "file": str(file),
             "id": None,
         }
         break
-    if date is None:
+    if date == {}:
         logger.error(f"Couldn't find match for file '{file}'")
         raise ValueError
     return date, data

@@ -101,9 +101,7 @@ def generate_oldge() -> None:
     os.makedirs(IMAGES_COVERS, exist_ok=True)
     os.makedirs(IMAGES_CUSTOM, exist_ok=True)
 
-    DATES_MONTHS = Image_mod.open(IMAGES_DATES / "2023-dates-months.png").convert(
-        "RGBA"
-    )
+    DATES_MONTHS = Image_mod.open(IMAGES_DATES / "2023-dates-months.png").convert("RGBA")
     DATES_KARAOKES = Image_mod.open(IMAGES_DATES / "2023-dates-v12.png").convert("RGBA")
     i_m, i_k = 0, 0
     for stream in dates_old.iter_rows(named=True):
@@ -116,25 +114,17 @@ def generate_oldge() -> None:
 
         if date[5] in digits:
             date_img = DATES_KARAOKES
-            apply_text(base, date_img, i_k).convert("RGB").save(
-                IMAGES_COVERS / f"{date}.jpg"
-            )
+            apply_text(base, date_img, i_k).convert("RGB").save(IMAGES_COVERS / f"{date}.jpg")
             i_k += 1
         else:
             date_img = DATES_MONTHS
-            apply_text(base, date_img, i_m, date_w=1250, date_h=215).convert(
-                "RGB"
-            ).save(IMAGES_CUSTOM / f"{date}.jpg")
+            apply_text(base, date_img, i_m, date_w=1250, date_h=215).convert("RGB").save(IMAGES_CUSTOM / f"{date}.jpg")
             i_m += 1
 
         index = i_m + i_k - 1
-        logger.debug(
-            f"[THUMB] [{index + 1:2d}/{N_COVERS}] Cover Pictures for {date} done"
-        )
+        logger.debug(f"[THUMB] [{index + 1:2d}/{N_COVERS}] Cover Pictures for {date} done")
 
-    logger.success(
-        f"[THUMB] {N_COVERS} successfully generated in {time_format(time() - t)}"
-    )
+    logger.success(f"[THUMB] {N_COVERS} successfully generated in {time_format(time() - t)}")
 
 
 def main() -> None:
@@ -214,17 +204,11 @@ def main() -> None:
                 raise ValueError
 
         apply_text(base, date_img, i).convert("RGB").save(IMAGES_COVERS / f"{date}.jpg")
-        apply_text(duet, date_img, i).convert("RGB").save(
-            IMAGES_COVERS / f"duet-{date}.jpg"
-        )
+        apply_text(duet, date_img, i).convert("RGB").save(IMAGES_COVERS / f"duet-{date}.jpg")
         index = i23 + i24 + i25 - 1
-        logger.debug(
-            f"[THUMB] [{index + 1:2d}/{N_COVERS}] Cover Pictures for {date} done"
-        )
+        logger.debug(f"[THUMB] [{index + 1:2d}/{N_COVERS}] Cover Pictures for {date} done")
 
-    logger.success(
-        f"[THUMB] {N_COVERS} successfully generated in {time_format(time() - t)}"
-    )
+    logger.success(f"[THUMB] {N_COVERS} successfully generated in {time_format(time() - t)}")
 
 
 if __name__ == "__main__":

@@ -1,9 +1,17 @@
+# Path for output songs, from project root
+out-path: "out/used"
+
+# Whether to generate or not the songs marked as disabled
+generate-disabled: true
+# Path for the disabled song generation (if active)
+diabled-path: "out/disabled"
+
+# Whether to automatically disable songs.
+# Warning: it will enable all songs then disable the ones with this tag
+# So any change made outside of this will be lost
+automatically-disable-songs: true
+# Flags to target when automatically disabling files
 disabled-flags:
     - v1
     - v2
     - duplicates
-
-out-path: "out/used"
-generate-disabled: true
-# Path from the root of the project folder (here)
-diabled-path: "out/disabled"

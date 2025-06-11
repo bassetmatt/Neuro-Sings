@@ -15,10 +15,7 @@ def check_ascii() -> None:
 
     songs = pl.read_csv(SONGS_CSV)
     no_ascii = songs.get_column("Song").to_list() + songs.get_column("Artist").to_list()
-    ascii = (
-        songs.get_column("Song_ASCII").to_list()
-        + songs.get_column("Artist_ASCII").to_list()
-    )
+    ascii = songs.get_column("Song_ASCII").to_list() + songs.get_column("Artist_ASCII").to_list()
 
     no_ascii_ok = set(chain.from_iterable(no_ascii)) - ALPHANUM
     ascii_ok = set(chain.from_iterable(ascii)) - ALPHANUM
@@ -69,6 +66,7 @@ def check_case(field: str) -> None:
 
 
 def all_tests() -> None:
+    format_logger(log_file=LOG_DIR / "checks.log")
     check_ascii()
     check_case("Artist")
     check_case("Song")
@@ -76,5 +74,4 @@ def all_tests() -> None:
 
 
 if __name__ == "__main__":
-    format_logger(log_file=LOG_DIR / "checks.log")
     all_tests()
