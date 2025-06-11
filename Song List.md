@@ -1394,6 +1394,27 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 18. (Evil & Neuro Duet) Halestorm & Prevail - can u see me in the dark: 02:04:33
 
 
+### 11-06-2025 [here]
+1. Be Human - Scott Matthew: 7:00
+2. 4nim0sity|99.999999999% - Ichi: 13:54
+3. Bugs - Ellie Minibot: 20:24
+4. Crazy Little Love - Nuage: 25:35
+5. Dreaming Chuchu - emon(Tes.): 32:34
+6. Who Can It Be Now - Men at Work: 39:27
+7. Castle Of Glass - Linkin Park: 45:34
+8. Endless Possibility - Tomoya Ohtani: 51:59
+9. (Duet) At God's Mercy - Rerulili: 58:58
+10. Hourhand - Suzie: 1:06:16
+11. TIAN TIAN - Mili: 1:12:28
+12. Hold the Line - TOTO: 1:19:32
+13. Melt - ryo (supercell): 1:26:19
+14. Pokemon Theme - John Siegler: 1:33:30
+15. (Duet) And I'm Home - wowaka: 1:39:43
+16. Static - Flavor Foley: 1:45:27
+17. Skies Forever Blue - Itoki Hana & Toby Fox: 1:52:26
+18. (Duet) Die With A Smile - Lady Gaga & Bruno Mars: 1:59:55
+
+
 ## Special Songs
 ### Official Collabs
 Put as special album: Collabs, list in order

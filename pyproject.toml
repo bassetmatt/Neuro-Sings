@@ -21,6 +21,7 @@ detect = "neuro.new_batch:main"
 thumbnails = "neuro.thumbnails:main"
 thumbnails-old = "neuro.thumbnails:generate_oldge"
 json-to-csv = "neuro.json_to_csv:update_csv"
+db-check = "neuro.checks:all_tests"
 
 [build-system]
 requires = ["pdm-backend"]
@@ -31,3 +32,6 @@ distribution = true
 
 [dependency-groups]
 dev = ["ipykernel>=6.29.5"]
+
+[tool.ruff] # See https://github.com/astral-sh/ruff#configuration
+line-length = 120

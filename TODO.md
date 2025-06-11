@@ -4,13 +4,14 @@
 - [x] Flags
 - [ ] Missing songs
   - [x] Bocchi
+  - [ ] Evil pirate stream wellerman duet https://youtu.be/ufIEF7w5lmE
   - [x] v3 missings
     - [x] https://www.youtube.com/watch?v=-Q17kdfTEXU
   - [x] v3 Nightcores
 - [x] Generate flags
   - [x] Beware of the false report sound of silence as v2
 
-- [ ] Fix format for karaoke songs that are in custom
+- [x] Fix format for karaoke songs that are in custom
 
 - [x] Use the include flag
 - [x] Have the v2 artists in song_tag
@@ -22,5 +23,5 @@
   - [x] Isolate the songs sung early, and put them into a "Isolated Neuro songs" Album or whatever
 
 - [ ] Write documentation
-- [ ] Have my drive as custom source
+- [ ] Have my drive as custom source -> Maybe don't put the link on github
   - [ ] Also as source of songs.csv

@@ -1,29 +1,50 @@
 # Neuro-sing-DB
 
 ## Setup
-tl;dr\
+### tl;dr
 [Install pipx](https://pipx.pypa.io/stable/installation/)
 ```bash
 pipx install pdm
 pdm install
 ```
+### More details
+TODO
 
 
-
-## Songs Download
-rclone command:
-```bash
-rclone copy -v gdrive:Neuro songs/drive
-```
 
 ## New batch
-- Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"`, `"Artist ASCII": "DECO 27"`
+### For me
+- [x] Get the new song names + order
+- [x] Download new drive songs `rclone copy -v gdrive:Neuro songs/drive`
+- [x] Generate json `detect`
+- [x] Sanitize json
+  - [x] Check Artists name, check coherency with database with queries
+  - [x] Set track number
+  - [x] ASCII check
+- [x] Update the csv database `json-to-csv`
+- [x] Check for errors again
+- [x] Run all checks `db-check`
+- [x] Generate new thumbnails `thumbnails`
+  - [x] If not in the date png, add the new date
+- [x] Generate songs `generate`
+- [x] Profit
+
+*Note*: Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"`, `"Artist ASCII": "DECO 27"`
+
+*Another Note*: Yes calling this "ASCII" isn't really correct, as "*" for example is an ASCII character. It means sanitized, but it was longer and less clear imo. The goal with this field is firstly to make titles/artists compatible with a filename, and also to ease search for songs e.g. P!NK -> PINK
+
+### For someone using this project
+Wait for me to do all this work and upload it properly (pls be patient, I try to be fast)
+TODO: Detail drives maybe?
+
 
 ## Repo organization
 - images
 - data
-- Song List
-- Notes
+- Song List.md
+- Notes.md
+- Duplicates.md
+- config.yml
 ### Code files
 - checks
 - json_to_csv
