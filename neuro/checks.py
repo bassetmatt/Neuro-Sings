@@ -1,3 +1,5 @@
+"""Some checks to run on files"""
+
 from itertools import chain
 from pathlib import Path
 from string import ascii_letters, digits
@@ -11,6 +13,8 @@ from neuro.utils import format_logger, get_sha256
 
 
 def check_ascii() -> None:
+    """Checks if the artists and songs are properly sanitized regarding
+    characters by displaying them in the console."""
     ALPHANUM = set(ascii_letters + digits)
 
     songs = pl.read_csv(SONGS_CSV)
@@ -28,6 +32,7 @@ def check_ascii() -> None:
 
 
 def check_hash() -> None:
+    """Checks if the hash from files match the hash in the database (long)."""
     songs = pl.read_csv(SONGS_CSV)
     for song in tqdm(songs.iter_rows(named=True)):
         file = ROOT / Path(song["File_IN"])  # type: ignore
@@ -38,6 +43,11 @@ def check_hash() -> None:
 
 # Test if there are case inconsitancies at all
 def check_case(field: str) -> None:
+    """Checks for any inconsistency in the database regarding casing and logs any found.
+
+    Args:
+        field (str): The field to check, usually Song or Artist.
+    """
     songs = pl.read_csv(SONGS_CSV)
     cased = set()
     uncased = set()
@@ -66,6 +76,7 @@ def check_case(field: str) -> None:
 
 
 def all_tests() -> None:
+    """Runs all checks defined in this file"""
     format_logger(log_file=LOG_DIR / "checks.log")
     check_ascii()
     check_case("Artist")

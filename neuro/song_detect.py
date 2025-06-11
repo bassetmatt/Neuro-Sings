@@ -10,7 +10,9 @@ from loguru import logger
 from neuro import CUSTOM_ROOT, DRIVE_ROOT, ROOT, SONGS_JSON
 
 SongEntry = dict[str, Optional[str]]
+"""Dictionary representing a song in the JSON, containing fields like "Song", "Artist", etc..."""
 SongJSON = dict[str, list[SongEntry]]
+"""Whole JSON file expected format. A list of date-indexed lists of songs"""
 
 
 def get_files(songs: pl.DataFrame) -> dict[str, list[Path]]:

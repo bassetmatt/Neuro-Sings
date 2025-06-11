@@ -1,3 +1,7 @@
+"""Neuro-sings python package.
+
+This file contains the main paths definitions"""
+
 from pathlib import Path
 
 ROOT = Path(".")
