@@ -1,14 +1,14 @@
 {
   "outlier": [
     {
-      "Artist": "September",
-      "Song": "Earth, Wind & Fire (Do U Remember)",
+      "Artist": "september",
+      "Song": "earth, wind & fire (do u remember)",
       "file": "songs/drive/september - earth, wind & fire (do u remember).mp3",
       "id": null
     },
     {
       "Artist": "",
-      "Song": "Fnaf",
+      "Song": "fnaf",
       "file": "songs/drive/fnaf.mp3",
       "id": null
     }
