@@ -6,12 +6,53 @@ import polars as pl
 import yaml
 from loguru import logger
 
-from neuro import DATES_CSV, DRIVE_ROOT, LOG_DIR, SONGS_CSV
+from neuro import DATES_CSV, DRIVE_DIR, LOG_DIR, SONGS_CSV
+from neuro.song_detect import export_json, extract_all
 from neuro.song_tags import CustomSong, DriveSong
 from neuro.utils import format_logger, time_format
 
 
-def main() -> None:
+def set_includes(exclude_flags: list[str]) -> None:
+    """Disables the songs that have the flags that are excluded.
+
+    Args:
+        exclude_flags (list[str]): List of flags provided in the yaml file.
+    """
+    songs_df = pl.read_csv(SONGS_CSV)
+
+    has_flag = pl.lit(False)
+    # Checks if any flag is present
+    for flag in exclude_flags:
+        has_flag |= pl.col("Flags").str.contains(flag)
+
+    songs_df.with_columns(
+        # Use this syntax despite `has_flag` being boolean because otherwise the rows that don't have
+        # any flags are ignored
+        pl.when(has_flag)
+        .then(pl.lit(False))  # If it has flags it's disabled
+        .otherwise(pl.lit(True))  # Else it's included (manually disabled songs will be reactivated)
+        .alias("include")  # Overwrites the existing include column
+    ).write_csv(SONGS_CSV)
+
+
+def standalone_set_includes() -> None:
+    """Standalone version of the include flag setter so it can be ran from the terminal without
+    running the whole song generation code."""
+
+    with open("config.yml", "r") as file:
+        config = yaml.safe_load(file)
+    if config["automatically-disable-songs"]:
+        set_includes(config["disabled-flags"])
+
+
+def new_batch() -> None:
+    format_logger(verbosity=5, log_file=LOG_DIR / "batches.log")
+    songs = pl.read_csv(SONGS_CSV)
+    out = extract_all(songs)
+    export_json(out)
+
+
+def generate_songs() -> None:
     format_logger(log_file=LOG_DIR / "generation.log")
     logger.info("[GEN] Starting generation batch")
 
@@ -24,6 +65,9 @@ def main() -> None:
     if config["generate-disabled"]:
         OUT_DIS = Path(config["diabled-path"])
         os.makedirs(OUT_DIS, exist_ok=True)
+
+    if config["automatically-disable-songs"]:
+        set_includes(config["disabled-flags"])
 
     # Start time
     t = time()
@@ -47,7 +91,7 @@ def main() -> None:
             continue
 
         logger.debug(f"[GEN] [{i:3d}/{N_SONGS}] Generating {song_dict['Song']}")
-        if Path(song_dict["File_IN"]).is_relative_to(DRIVE_ROOT):
+        if Path(song_dict["File_IN"]).is_relative_to(DRIVE_DIR):
             d_dict = dates_dict.get(song_dict["Date"], {})
             s = DriveSong(song_dict, d_dict)
         else:
@@ -55,10 +99,8 @@ def main() -> None:
         s.create_out_file(create=True, out_dir=out_dir)
         s.apply_tags()
 
-    logger.success(
-        f"[GEN] Done converting {N_SONGS} songs in {time_format(time() - t)} !"
-    )
+    logger.success(f"[GEN] Done converting {N_SONGS} songs in {time_format(time() - t)} !")
 
 
 if __name__ == "__main__":
-    main()
+    generate_songs()
