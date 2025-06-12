@@ -6,12 +6,14 @@ import hashlib
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, TextIO
+from typing import TextIO
 
 import loguru
 from loguru import logger
 
-LOG_FOLDER = Path("logs")
+from neuro import LOG_DIR
+
+# It's ints to be easier to pass via CLI, instead of typing the level with a risk of typo
 VERBOSE = {
     0: "CRITICAL",
     1: "ERROR",
@@ -25,6 +27,15 @@ VERBOSE = {
 
 
 def rotation_fn(_msg: loguru.Message, file_opened: TextIO) -> bool:
+    """Rotation function for logfiles.
+
+    Args:
+        _msg (loguru.Message): Message.
+        file_opened (TextIO): File object.
+
+    Returns:
+        bool: True (should change file) if file is more than a week old or bigger than 2MiB.
+    """
     file = Path(file_opened.name)
     # File is more than 1 week old
     is_old = datetime.now().timestamp() - file.stat().st_ctime > 7 * 86400
@@ -33,11 +44,23 @@ def rotation_fn(_msg: loguru.Message, file_opened: TextIO) -> bool:
     return is_old or is_big
 
 
-def format_logger(*, log_file: Optional[Path] = None, verbosity: int = 5) -> None:
-    level = VERBOSE.get(verbosity, "none")
-    if level == "none":
-        logger.error(f"[CLI] Wrong verbosity {verbosity}")
+def format_logger(*, log_file: Path = LOG_DIR / "neuro.log", verbosity: int = 5) -> None:
+    """Formats a loguru logger, can be called from anywhere to set it up.
+
+    Args:
+        log_file (Path, optional): File to store the logs. Defaults to LOG_DIR/"neuro.log".
+        verbosity (int, optional): Level of verbosity [0-6], the higher the more verbose, see VERBOSE\
+            Variable in this file for more details. Defaults to 5 (DEBUG).
+
+    Raises:
+        ValueError: If verbosity isn't in [0,6].
+    """
+
+    if verbosity not in VERBOSE:
+        logger.error(f"Logger got wrong verbosity {verbosity}")
         raise ValueError("Wrong Level of verbosity, expect int in [0,6]")
+
+    level: str = VERBOSE[verbosity]
     # Adds the segment on multiple lines to disable each at will by commenting
     format = "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green>"
     format += " | <level>{level:<8}</level>"
@@ -49,12 +72,9 @@ def format_logger(*, log_file: Optional[Path] = None, verbosity: int = 5) -> Non
     # Resets all previously existing sinks
     logger.remove()
 
-    LOG_FILE = log_file
-    if LOG_FILE is None:
-        LOG_FILE = LOG_FOLDER.joinpath("neuro.log")
     # Log file
     logger.add(
-        LOG_FILE,
+        log_file,
         format=format + f_name,
         enqueue=True,
         level=level,
@@ -66,13 +86,37 @@ def format_logger(*, log_file: Optional[Path] = None, verbosity: int = 5) -> Non
     logger.add(sys.stderr, format=format, level=level, enqueue=True)
 
 
-# https://stackoverflow.com/questions/22058048/hashing-a-file-in-python
-# BUF_SIZE is totally arbitrary, change for your app!
-BUF_SIZE = 65536  # lets read stuff in 64kb chunks!
+def file_check(file_: Path | str, /) -> None:
+    """Checks if a given file exists or not.
+
+    Args:
+        file (Path | str): File to check (positional argument).
+
+    Raises:
+        FileNotFoundError: If the file doesn't exist.
+    """
+    file: Path = Path(file_)
+    if not file.exists():
+        err = f"File '{str(file)}' not found."
+        logger.error(err)
+        raise FileNotFoundError(err)
 
 
 def get_sha256(file: Path) -> str:
+    """Computes the SHA-256 of a given file.
+
+    Args:
+        file (Path): File to get the hash.
+
+    Returns:
+        str: A string with the hash.
+    """
+    # https://stackoverflow.com/questions/22058048/hashing-a-file-in-python
+    # BUF_SIZE is totally arbitrary, change for your app!
+    BUF_SIZE = 65536  # lets read stuff in 64kb chunks!
+
     sha256 = hashlib.sha256()
+    file_check(file)
     with open(file, "rb") as f:
         while True:
             data = f.read(BUF_SIZE)
@@ -82,22 +126,14 @@ def get_sha256(file: Path) -> str:
     return sha256.hexdigest()
 
 
-def file_check(file_: Path | str, /) -> None:
-    file: Path = Path(file_)
-    if not file.exists():
-        err = f"File '{str(file)}' not found."
-        logger.error(err)
-        raise FileNotFoundError(err)
-
-
 def time_format(dt: float, precise: bool = False) -> str:
     """Formats a floating point number of seconds as min/sec, sec, or ms, ...
     Done automatically once and for all
 
     Args:
         dt (float): Time
-        precise (bool, optional): Display seconds if dt > 3600. Display decimals
-        if dt>60. Defaults to False.
+        precise (bool, optional): Display seconds if dt > 3600. Display decimals\
+            if dt>60. Defaults to False.
 
     Returns:
         str: Pretty time string
