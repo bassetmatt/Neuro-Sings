@@ -48,7 +48,6 @@ TODO: Detail drives maybe?
 ### Code files
 - checks
 - json_to_csv
-- new_batch
 - run
 - song_detect
 - song_tags

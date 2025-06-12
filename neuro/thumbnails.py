@@ -1,3 +1,5 @@
+"""Thumbnail generation for the songs"""
+
 import os
 from pathlib import Path
 from string import digits
@@ -213,23 +215,24 @@ def generate_main() -> None:
     """Generates all thumbnails at once. It automatically re-generate all of them."""
     format_logger(log_file=LOG_DIR / "thumbnails.log")
 
+    # fmt: off
     # v3 | v3 Voice w/ v2 Model | Eliv v1 Model | Eliv v2 Model
-    SOLO_BG = list(
-        map(
-            lambda name: open_image(IMAGES_BG_DIR, name),
-            ["nwero.png", "newero.png", "eliv.png", "neweliv.png"],
-        )
-    )
+    SOLO_BG = list(map(
+        lambda name: open_image(IMAGES_BG_DIR, name),
+        ["nwero.png", "newero.png", "eliv.png", "neweliv.png"],
+    ))
 
     # Neuro v2, Evil v1 | Neuro v3, Evil v1 | Neuro v3, Evil v2
-    DUET_BG = list(
-        map(
-            lambda name: open_image(IMAGES_BG_DIR, name),
-            ["smocus.jpg", "smocus_inter.png", "smocus_new.png"],
-        )
-    )
+    DUET_BG = list(map(
+        lambda name: open_image(IMAGES_BG_DIR, name),
+        ["smocus.jpg", "smocus_inter.png", "smocus_new.png"],
+    ))
 
-    DATES_IMAGES = {y: open_image(IMAGES_DATES_DIR, f"{y}-dates.png", rgba=True) for y in range(2023, 2026)}
+    DATES_IMAGES = {
+        y: open_image(IMAGES_DATES_DIR, f"{y}-dates.png", rgba=True)
+        for y in range(2023, 2026)
+    }
+    # fmt: on
 
     logger.info("[THUMB] Starting the generation of thumbnails")
 
