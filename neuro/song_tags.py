@@ -1,3 +1,5 @@
+"""Applies all metadata tags on music files"""
+
 import os
 import shutil
 from dataclasses import dataclass
@@ -12,7 +14,7 @@ from mutagen.id3 import ID3
 from mutagen.id3._frames import APIC
 from PIL import Image
 
-from neuro import IMAGES_COVERS, IMAGES_CUSTOM, LOG_DIR, ROOT
+from neuro import IMAGES_COVERS_DIR, IMAGES_CUSTOM_DIR, LOG_DIR, ROOT_DIR
 from neuro.song_detect import SongEntry
 from neuro.utils import file_check, format_logger
 
@@ -25,8 +27,11 @@ class Song:
         evil: bool
         duet: bool
         duplicate: bool
+        """Duplicate song, file doesn't exist in drive, but song was sung that day"""
         as_drive: bool
+        """Use the same naming convention as drive files for filename"""
         as_custom: bool
+        """Use the same naming convention as custom files for filename"""
 
     def init_flags(self, flags: Optional[str]) -> None:
         # flag is false if song has no flags of if it has flags but not the selected one
@@ -38,12 +43,7 @@ class Song:
         # Strange code, but just expands into `"v1": flags_check("v1", flags)`...
         # for all flags. It uses the fact that Flags fields are exactly the same
         # strings as the flags
-        self.flags = self.Flags(
-            **{
-                flag: flag_check(flag, flags)
-                for flag in self.Flags.__dataclass_fields__.keys()
-            }
-        )
+        self.flags = self.Flags(**{flag: flag_check(flag, flags) for flag in self.Flags.__dataclass_fields__.keys()})
 
     def __init__(self, song_dict: SongEntry, karaoke_dict: dict = {}) -> None:
         assert song_dict["Song"] is not None
@@ -57,7 +57,7 @@ class Song:
         self.artist_ascii: str = song_dict["Artist_ASCII"]
 
         assert song_dict["File_IN"] is not None
-        self.file: Path = ROOT / Path(song_dict["File_IN"])
+        self.file: Path = ROOT_DIR / Path(song_dict["File_IN"])
         file_check(self.file)
 
         assert song_dict["Album_ID"] is not None
@@ -136,13 +136,11 @@ class DriveSong(Song):
     def __init__(self, song_dict: dict, karaoke_dict: dict) -> None:
         super().__init__(song_dict, karaoke_dict)
 
-    def create_out_file(
-        self, *, out_dir: Path = Path("out"), create: bool = True
-    ) -> None:
+    def create_out_file(self, *, out_dir: Path = Path("out"), create: bool = True) -> None:
         file = self.file
-        os.makedirs(ROOT / out_dir, exist_ok=True)
+        os.makedirs(ROOT_DIR / out_dir, exist_ok=True)
         name = self.file_name(self.flags.as_custom)
-        self.outfile = ROOT / out_dir / f"{name}.mp3"
+        self.outfile = ROOT_DIR / out_dir / f"{name}.mp3"
 
         if create or (not self.outfile.exists()):
             shutil.copy2(file, self.outfile)
@@ -162,11 +160,11 @@ class DriveSong(Song):
         id3 = ID3(self.outfile)
         if self.image is None:
             if self.flags.duet:
-                cover = IMAGES_COVERS / Path(f"duet-{self.date}.jpg")
+                cover = IMAGES_COVERS_DIR / Path(f"duet-{self.date}.jpg")
             else:
-                cover = IMAGES_COVERS / Path(f"{self.date}.jpg")
+                cover = IMAGES_COVERS_DIR / Path(f"{self.date}.jpg")
         else:
-            cover = IMAGES_CUSTOM / f"{self.image}.jpg"
+            cover = IMAGES_CUSTOM_DIR / f"{self.image}.jpg"
         file_check(cover)
         id3.delall("APIC")
         id3.add(self.id3_pic(cover))
@@ -182,7 +180,7 @@ class CustomSong(Song):
         ext = file.suffix
 
         name = self.file_name(not self.flags.as_drive)
-        self.outfile = ROOT / out_dir / f"{name}.{ext}"
+        self.outfile = ROOT_DIR / out_dir / f"{name}.{ext}"
 
         if create or (not self.outfile.exists()):
             shutil.copy2(file, self.outfile)
@@ -192,7 +190,7 @@ class CustomSong(Song):
         if self.image is None:
             logger.error(f"Image can't be None for custom song {self.file}")
 
-        self.cover = IMAGES_CUSTOM / f"{self.image}.jpg"
+        self.cover = IMAGES_CUSTOM_DIR / f"{self.image}.jpg"
         file_check(self.cover)
 
         match ext:

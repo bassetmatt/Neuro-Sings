@@ -8,7 +8,7 @@ import polars as pl
 from loguru import logger
 from tqdm import tqdm
 
-from neuro import LOG_DIR, ROOT, SONGS_CSV
+from neuro import LOG_DIR, ROOT_DIR, SONGS_CSV
 from neuro.utils import format_logger, get_sha256
 
 
@@ -35,9 +35,9 @@ def check_hash() -> None:
     """Checks if the hash from files match the hash in the database (long)."""
     songs = pl.read_csv(SONGS_CSV)
     for song in tqdm(songs.iter_rows(named=True)):
-        file = ROOT / Path(song["File_IN"])  # type: ignore
+        file = ROOT_DIR / Path(song["File_IN"])
         assert file.exists()
-        hash = song["Hash_IN"]  # type: ignore
+        hash = song["Hash_IN"]
         assert get_sha256(file) == hash, f"{file}"
 
 

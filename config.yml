@@ -11,6 +11,8 @@ diabled-path: "out/disabled"
 # So any change made outside of this will be lost
 automatically-disable-songs: true
 # Flags to target when automatically disabling files
+# If you don't want to disable anything, then put the flag above to false, otherwise
+# The code may crash
 disabled-flags:
     - v1
     - v2

@@ -7,7 +7,7 @@ from typing import Optional
 import polars as pl
 from loguru import logger
 
-from neuro import CUSTOM_ROOT, DRIVE_ROOT, ROOT, SONGS_JSON
+from neuro import CUSTOM_DIR, DRIVE_DIR, ROOT_DIR, SONGS_JSON
 
 SongEntry = dict[str, Optional[str]]
 """Dictionary representing a song in the JSON, containing fields like "Song", "Artist", etc..."""
@@ -17,18 +17,18 @@ SongJSON = dict[str, list[SongEntry]]
 
 def get_files(songs: pl.DataFrame) -> dict[str, list[Path]]:
     # Set of all files already treated and registered
-    existing = set(map(lambda x: ROOT / Path(x), songs.get_column("File_IN").to_list()))
+    existing = set(map(lambda x: ROOT_DIR / Path(x), songs.get_column("File_IN").to_list()))
 
     def get_audios(p: Path, *, filetype: str = "mp3") -> list[Path]:
         files = list(p.glob(f"*.{filetype}"))
         return list(filter(lambda f: f not in existing, files))
 
-    neuro_dir = DRIVE_ROOT
-    duets_dir = DRIVE_ROOT / "Duets"
-    evil_dir = [DRIVE_ROOT / "Evil", DRIVE_ROOT / "Evil/QUARANTINE"]
-    v1_dir = DRIVE_ROOT / "v1 voice"
-    v2_dir = DRIVE_ROOT / "v2 voice"
-    custom_dir = CUSTOM_ROOT
+    neuro_dir = DRIVE_DIR
+    duets_dir = DRIVE_DIR / "Duets"
+    evil_dir = [DRIVE_DIR / "Evil", DRIVE_DIR / "Evil/QUARANTINE"]
+    v1_dir = DRIVE_DIR / "v1 voice"
+    v2_dir = DRIVE_DIR / "v2 voice"
+    custom_dir = CUSTOM_DIR
 
     return {
         "Neuro": get_audios(neuro_dir),

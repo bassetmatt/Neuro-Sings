@@ -206,36 +206,6 @@ Ai Kotoba around 1h32 and 3h16 [CONFIRMED]
 25. Wham! - Careless Whisper [Muted]: 2:31:24 - 2:36:25
 
 
-
-
-2. Bring Me The Horizon - Can You Feel My Heart [Muted]: 16:11 - 20:00
-3. Omoi - Teo: 23:12 - 26:40
-4. Girls' Generation - Gee: 29:15 - 32:35
-5. CaptainSparklez - Revenge: 35:31 - 39:12
-6. The Living Tombstone - It's Been So Long [Muted]: 45:23 - 48:15
-7. NOMA - Brain Power: 50:52 - 52:44
-8. Imagine Dragons - Radioactive: 55:03 - 58:11
-9. Carly Rae Jepsen - Call Me Maybe [Muted]: 1:00:47 - 1:04:02
-10. nomico - Bad Apple: 1:05:54 - 1:09:34
-11. MikitoP - 39 Music: 1:11:18 - 1:15:40
-12. Billie Eilish - Bad Guy: 1:18:36 - 1:21:50
-13. PinocchioP - Godish: 1:23:40 - 1:27:05
-14. Ado - Usseewa: 1:29:48 - 1:33:13
-15. Three Days Grace - I am Machine [Muted]: 1:35:25 - 1:38:51
-16. Katy Perry - I Kissed a Girl: 1:40:45 - 1:43:48
-
-18. A-ha - Take On Me: 1:51:24 - 1:55:16
-19. Smash Mouth - All Star: 1:57:12 - 2:00:30
-20. Jason Paige - Pokemon: 2:01:52 - 2:05:10
-21. Mr. Kitty - After Dark: 2:07:35 - 2:11:52
-22. Imagine Dragons - Enemy: 2:14:08 - 2:17:00
-23. Porter Robinson & Madeon - Shelter: 2:18:51 - 2:22:23
-
-25. Wham! - Careless Whisper [Muted]: 2:31:24 - 2:36:25
-
-
-
-
 ### 29-03-2023 [here](https://youtu.be/5Ebaq8yaiQY)
 1. 9:53 - Running In The 90s
 2. 17:15 - Eye Of The Tiger
@@ -1415,8 +1385,8 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 18. (Duet) Die With A Smile - Lady Gaga & Bruno Mars: 1:59:55
 
 
-## Special Songs
-### Official Collabs
+## Collabs
+### "Official" (not on stream, separate release)
 Put as special album: Collabs, list in order
 - [x] 1. Monster ft Camila 3-11-2023
 - [x] 2. Call me Maybe ft Numi 23-11-2023
@@ -1443,14 +1413,23 @@ Put as special album: Collabs, list in order
 - [x] 4. Rises the Moon Evil ft Mini 4-10-2024
 - [x] 5. Bring me to life ft EMBER 27-10-2024
 
-### Extra
+## Extra
 1. Bilibili 2024-09-15
 2. I don't want to be an engineer
 3. Bocchi solo
 4. Bocchi group
 5. Queen x King boop mashup ?
 
-### Subathon
+
+## Theme Streams
+1. Wellerman (Neuro Pirate Stream) 2023-07-26
+2. Wellerman Duet (Evil Pirate Stream) 2023-08-11
+3. Happy Halloween (Halloween Stream) 2023-10-31
+4. Spowoky Owoky Pumpkins (Halloween Stream) 2023-10-31
+5. Let You Down (Cyberpunk Stream) 2023-11-05
+
+
+## Subathon
 Special album: Subathon covers
 #### Year 1
 1. Subathon Mashup
