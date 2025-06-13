@@ -1,9 +1,9 @@
 import os
 from pathlib import Path
 from time import time
+import tomllib as toml
 
 import polars as pl
-import yaml
 from loguru import logger
 
 from neuro import DATES_CSV, DRIVE_DIR, LOG_DIR, SONGS_CSV
@@ -39,10 +39,10 @@ def standalone_set_includes() -> None:
     """Standalone version of the include flag setter so it can be ran from the terminal without
     running the whole song generation code."""
 
-    with open("config.yml", "r") as file:
-        config = yaml.safe_load(file)
-    if config["automatically-disable-songs"]:
-        set_includes(config["disabled-flags"])
+    with open("config.toml", "rb") as file:
+        config = toml.load(file)
+    if config["disabled"]["auto-disable"]:
+        set_includes(config["disabled"]["flags"])
 
 
 def new_batch_detection() -> None:
@@ -65,21 +65,21 @@ def generate_songs() -> None:
     logger.info("[GEN] Starting generation batch")
 
     # Loading config file
-    with open("config.yml", "r") as file:
-        config = yaml.safe_load(file)
+    with open("config.toml", "rb") as file:
+        config = toml.load(file)
 
     # Output folder
-    OUT = Path(config["out-path"])
+    OUT = Path(config["output"]["path"])
     os.makedirs(OUT, exist_ok=True)
 
     # If the disabled songs are generated, set their folder and create it if needed
-    if config["generate-disabled"]:
-        OUT_DIS = Path(config["diabled-path"])
+    if config["disabled"]["generate"]:
+        OUT_DIS = Path(config["disabled"]["path"])
         os.makedirs(OUT_DIS, exist_ok=True)
 
     # Filtered
-    if config["automatically-disable-songs"]:
-        set_includes(config["disabled-flags"])
+    if config["disabled"]["auto-disable"]:
+        set_includes(config["disabled"]["flags"])
 
     # Start time
     t = time()
@@ -94,7 +94,7 @@ def generate_songs() -> None:
     for i, song_dict in enumerate(songs.iter_rows(named=True)):
         if song_dict["include"]:
             out_dir = OUT
-        elif config["generate-disabled"]:  # Not included, but still generated
+        elif config["disabled"]["generate"]:  # Not included, but still generated
             out_dir = OUT_DIS
         else:
             logger.debug(f"[GEN] [{i + 1:3d}/{N_SONGS}] Skipped {song_dict['Song']}")
