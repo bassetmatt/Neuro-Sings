@@ -30,6 +30,7 @@ Maybe have special covers for these songs
 
 
 ## Missing
+### v3 [Fixed]
 1. Goddess (21/06/2023)
 20. Frank Sinatra - My Way (Nightcore) (04/09/2024)
 8. The Cab - Angel With A Shotgun (Nightcore) (04/09/2024)
