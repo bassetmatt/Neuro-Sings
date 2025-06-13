@@ -1,5 +1,5 @@
 ## v1
-### 17-05
+### 17-05 [OK]
 1. Rap God -> Apr 26
 2. Careless Whisper -> Feb 14
 3. Ghost Rule -> Jan 5
@@ -23,7 +23,7 @@
 
 22. Oddloop -> Jan 28
 
-### 26-04
+### 26-04 [OK]
 1. Brain Power -> Feb 3
 2. Rockefeller Street -> Apr 20
 3. Thnks fr the Mmrs -> Apr 5
