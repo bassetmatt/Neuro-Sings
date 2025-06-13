@@ -180,7 +180,7 @@ class CustomSong(Song):
         ext = file.suffix
 
         name = self.file_name(not self.flags.as_drive)
-        self.outfile = ROOT_DIR / out_dir / f"{name}.{ext}"
+        self.outfile = ROOT_DIR / out_dir / f"{name}{ext}"
 
         if create or (not self.outfile.exists()):
             shutil.copy2(file, self.outfile)
@@ -234,7 +234,7 @@ class CustomSong(Song):
         img.close()
 
         image = Picture()
-        image.type = 18
+        image.type = 3
         image.mime = "image/jpeg"
         image.desc = "Cover"
         image.data = image_file

@@ -91,6 +91,8 @@ def generate_songs() -> None:
     # Easier data format to deal with
     dates_dict = {k["Date"]: k for k in dates.iter_rows(named=True)}
 
+    # In case I just want to test the end
+    # for i, song_dict in enumerate(songs.rows(named=True)[-5:]):
     for i, song_dict in enumerate(songs.iter_rows(named=True)):
         if song_dict["include"]:
             out_dir = OUT

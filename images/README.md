@@ -62,7 +62,7 @@ Most I got the HQ image, else it's 200x200
 
 ### Other
 Weiward: https://www.youtube.com/watch?v=AcmkFxdmgmA
-
+Sonic: https://x.com/mae_has_art, from discord [here](https://discord.com/channels/1327042091200807024/1376733854944989264/1376733854944989264)
 ## Subathon
 - Subathon Y1: OG Art (HQ) from Discord
 - Subathon Y2: Screen (Decent quality)
