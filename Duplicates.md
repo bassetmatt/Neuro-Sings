@@ -1,5 +1,5 @@
-## v1
-### 17-05 [OK]
+## v1 [OK]
+### 17-05
 1. Rap God -> Apr 26
 2. Careless Whisper -> Feb 14
 3. Ghost Rule -> Jan 5
@@ -23,7 +23,7 @@
 
 22. Oddloop -> Jan 28
 
-### 26-04 [OK]
+### 26-04
 1. Brain Power -> Feb 3
 2. Rockefeller Street -> Apr 20
 3. Thnks fr the Mmrs -> Apr 5
@@ -47,7 +47,7 @@
 21. Shelter -> Feb 10
 22. A Thousand Years -> Apr 12
 
-### 20-04 [OK]
+### 20-04
 1. PoPiPo-> Mar 6
 
 3. All Star-> Mar 4
@@ -73,7 +73,7 @@
 25. Fly Me To The Moon -> Apr 12
 
 
-### 12-04 [OK]
+### 12-04
 2. Gee -> Mar 10
 
 4. The Disappearance of Hatsune Miku -> Apr 5
