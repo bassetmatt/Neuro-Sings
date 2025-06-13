@@ -60,6 +60,9 @@ Most I got the HQ image, else it's 200x200
 - Heat Abnormal: key: https://x.com/soulgluttony (again)
 - Tententen: Copper1ion: https://www.youtube.com/watch?v=fkBe1...
 
+### Other
+Weiward: https://www.youtube.com/watch?v=AcmkFxdmgmA
+
 ## Subathon
 - Subathon Y1: OG Art (HQ) from Discord
 - Subathon Y2: Screen (Decent quality)
