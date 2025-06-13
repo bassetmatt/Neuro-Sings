@@ -1,20 +1,18 @@
 # TODO
-- [x] Missing songs
-  - [x] Evil pirate stream wellerman duet https://youtu.be/ufIEF7w5lmE
-
 
 - [x] Have automatic filters for include flag
-- [ ] Duplicate Tag with copy of files
-  - [ ] v3
-  - [ ] v1 (ugh)
+- [x] Duplicate Tag with copy of files
+  - [x] v3
+  - [x] v1 (ugh)
 - [ ] Run the gain thing (mp3gain/qtgain)
 
 - [ ] Disclaimers in README
 
+- [ ] Switch config to TOML
 - [ ] Write documentation
   - [x] checks
-  - [ ] json_to_csv
-  - [ ] run
+  - [x] json_to_csv
+  - [x] run
   - [ ] song_detect
   - [ ] song_tags
   - [x] thumbnails

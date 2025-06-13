@@ -1,5 +1,4 @@
 # Notes
-
 ## Theme streams
 Special covers
 - [x] 2023-07-26: Neuro Pirate Stream
@@ -11,6 +10,7 @@ Special covers
 
 ### Special Songs
 Maybe have special covers for these songs
+
 - [x] 2023-10-11: Creep (evil)
 - [x] 2023-12-06: Flag some songs as christmas
 - 2023-12-06: Padoru
@@ -21,12 +21,13 @@ Maybe have special covers for these songs
 - [x] 2024-08-21: CFRB
 - [x] 2024-10-06: Creep (Neuro)
 - 2024-11-13: Dubidu (Evil)
-- 2024-11-27: Chinatown Blues
+- [x] 2024-11-27: Chinatown Blues
 - [x] Ash Again
 - [x] Heat abnormal
 - [x] Lemon Melon Cooke
 - [x] Propaganda
 - [x] Tengoku
+- [x] Weiward
 
 
 ## Missing
@@ -35,15 +36,11 @@ Maybe have special covers for these songs
 20. Frank Sinatra - My Way (Nightcore) (04/09/2024)
 8. The Cab - Angel With A Shotgun (Nightcore) (04/09/2024)
 
-### v2
+### v2 [Fixed]
 4. 45:49 - 49:02 - I Kissed a Girl
 
-### v1
+### v1 [Fixed]
 26. Rich Flex - 21 Savage, Drake (VibeOff) from 20-04-2023
-
-## Other
-- [x] Have the nightcore version as filename or in title ?
-- [x] Have the bread cover highlighted somehow
 
 ## Accepted characters in ASCII Title:
 - [a-zA-Z0-9]

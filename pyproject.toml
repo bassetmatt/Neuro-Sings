@@ -16,13 +16,13 @@ readme = "README.md"
 license-files = ["LICENSE-APACHE", "LICENSE-MIT"]
 
 [project.scripts] # Shortcuts, have a command for main run so that it emulates a "real" run
-generate = "neuro.run:generate_songs"
-detect = "neuro.run:new_batch"
-thumbnails = "neuro.thumbnails:generate_main"
-thumbnails-old = "neuro.thumbnails:generate_oldge"
-json-to-csv = "neuro.json_to_csv:update_csv"
+songs-generate = "neuro.run:generate_songs"
+update-json = "neuro.run:new_batch_detection"
+thumbnails-generate = "neuro.thumbnails:generate_main"
+# thumbnails-old = "neuro.thumbnails:generate_oldge"
+update-csv = "neuro.json_to_csv:update_csv"
 db-check = "neuro.checks:all_tests"
-includes = "neuro.run:standalone_set_includes"
+set-includes = "neuro.run:standalone_set_includes"
 
 [build-system]
 requires = ["pdm-backend"]
