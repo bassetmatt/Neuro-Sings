@@ -23,3 +23,4 @@
   - [ ] Also as source of songs.csv
 
 - [ ] Write unit tests lol ???
+- [ ] Multithread file creation to be faster lmao ???

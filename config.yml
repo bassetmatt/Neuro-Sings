@@ -7,13 +7,12 @@ generate-disabled: true
 diabled-path: "out/disabled"
 
 # Whether to automatically disable songs.
-# Warning: it will enable all songs then disable the ones with this tag
+# Warning: it will enable all songs then disable the ones with these flags
 # So any change made outside of this will be lost
 automatically-disable-songs: true
 # Flags to target when automatically disabling files
-# If you don't want to disable anything, then put the flag above to false, otherwise
-# The code may crash
+# If you don't want to disable anything, then put a single flag that doesn't exist
 disabled-flags:
     - v1
     - v2
-    - duplicates
+    - duplicate

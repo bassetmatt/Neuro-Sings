@@ -136,23 +136,23 @@
 20. Baka Mitai -> Feb 7
 
 ## v3
-### 11/10/23 - evil
+### 11/10/23 - evil [OK]
 3. I am Machine, 1st on 30/08/2023
 12. You're Gonna Go Far, Kid, 1st on 19/07/2023
 
-### 6/12/23
+### 6/12/23 [OK]
 2. I Want It That Way, 1st on 2023-08-16
-5. Ocean Man, 1st on2023-06-21
+5. Ocean Man, 1st on 2023-06-21
 7.  Airhead, 1st on 2023-08-02
 12.  Fireflies, 1st on 2023-08-02
 
-### 26/12/23 -> All songs to flag !
+### 26/12/23 (Christmas) [OK]
 1. Last Christmas, 1st on 2023-12-06
 3. It's beginning to look a lot like Christmas, 1st on 2023-12-06
 6. All I want for Christmas is you, 1st on 2023-12-06
 
-### 2024-08-07
+### 2024-08-07 [OK]
 19. Wonderwall, 1st on 2023-11-08
 
-### 2024-08-21
+### 2024-08-21 [OK]
 21. Somebody That I Used To Know, 1st on 2023-11-08
