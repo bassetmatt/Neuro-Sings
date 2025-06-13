@@ -7,15 +7,32 @@ from loguru import logger
 
 from neuro import DATES_CSV, LOG_DIR, SONGS_CSV, SONGS_JSON
 from neuro.song_detect import SongEntry, SongJSON
-from neuro.utils import format_logger, get_sha256
+from neuro.utils import file_check, format_logger, get_sha256
 
 
 def is_eliv(s: SongEntry) -> bool:
+    """Checks if the file from an Entry is in the Evil subdirectory.
+
+    Args:
+        s (SongEntry): Song Entry.
+
+    Returns:
+        bool: True if it's in the subfolder.
+    """
     assert s["file"] is not None
     return "/Evil" in s["file"]
 
 
 def field_ascii(song: SongEntry, field: Literal["Song", "Artist"]) -> tuple[str, str]:
+    """Gets the "normal" and "ASCII" versions of the 2 fields that have these variants.
+
+    Args:
+        song (SongEntry): A song Entry (dict from JSON file).
+        field (Literal["Song", "Artist"]): The field.
+
+    Returns:
+        tuple[str, str]: A tuple with (normal, ascci).
+    """
     normal = song[f"{field}"]
     assert normal is not None
 
@@ -25,9 +42,24 @@ def field_ascii(song: SongEntry, field: Literal["Song", "Artist"]) -> tuple[str,
     return normal, ascii
 
 
-def flags(file: Path, eliv: bool) -> Optional[str]:
+def get_flags(file: Path, eliv: Optional[bool] = None) -> Optional[str]:
+    """Gets the common evil/duet flag given a file. Evil flag can be set from \
+        another boolean.
+
+    Args:
+        file (Path): File to check
+        eliv (Optional[bool], optional): Can be ignored, but in case of an evil \
+            stream, the duets will be in `/Duets` and not `/Evil`, so a global flag\
+            for the stream can be given. Defaults to None.
+
+    Returns:
+        Optional[str]: String with flags if any, None otherwise.
+    """
     flags = ""
-    if eliv:
+    if eliv is None:
+        if "/Evil" in str(file):
+            flags += "evil;"
+    elif eliv:  # eliv is not None, then it's a bool, and here the bool is True
         flags += "evil;"
     if "/Duets" in str(file):
         flags += "duets;"
@@ -37,19 +69,20 @@ def flags(file: Path, eliv: bool) -> Optional[str]:
 
 
 def update_csv() -> None:
+    """Adds songs from the JSON file to the CSV Songs file. Also updates the\
+        Dates CSV file in case there is a new stream."""
     format_logger(log_file=LOG_DIR / "json.log")
     with open(SONGS_JSON, "r") as f:
         json_data: SongJSON = json.load(f)
 
     # Absolutely doesn't work if the CSV is empty
-    # Using series is annoying
-
     songs_df = pl.read_csv(SONGS_CSV)
     dates_df = pl.read_csv(DATES_CSV)
+
     # [-1] Makes sure id=0 if the column is empty
     id = max(songs_df.get_column("id").to_list() + [-1]) + 1
 
-    streams_done = []
+    streams_done: list[str] = []
 
     # date is like 2025-04-02
     # songs is a list of dict with song infos
@@ -59,23 +92,32 @@ def update_csv() -> None:
 
         # Avoids adding "outlier" and "custom" as dates
         if date[0] == "2" and date not in dates_df.get_column("Date"):
-            df = pl.DataFrame({"Date": date, "Singer": singer, "Duet Format": "v2"})
-            dates_df = pl.concat([dates_df, df])
+            df = pl.DataFrame(
+                {
+                    "Date": date,
+                    "Singer": singer,
+                    "Duet Format": "v2",
+                }
+            )
+            # Adds a row for a new stream in the dates CSV
+            dates_df.extend(df)
             logger.info(f"[Karaoke][+] {date} with {singer} singing")
 
         remove = 0
-        # Just ensures the songs ids' are increasing with album id
+        # Just ensures that when sorting by id, the songs from a same album will also be sorted
         for song in sorted(songs, key=lambda x: x["id"] if x["id"] is not None else 5000):
             if song["id"] is None:
                 continue
 
             assert song["file"] is not None
             file = Path(song["file"])
+            file_check(file)  # Checks if file exists on disk
             if str(file) in songs_df.get_column("File_IN"):
                 remove += 1
-                logger.debug(f"File {str(file)} already in database")
+                logger.debug(f"File {str(file)} was already in database")
                 continue
 
+            # Using helper function to avoid code duplication
             name, name_ascii = field_ascii(song, "Song")
             artist, artist_ascii = field_ascii(song, "Artist")
 
@@ -93,12 +135,12 @@ def update_csv() -> None:
                     "File_IN": str(file),
                     "Hash_IN": get_sha256(file),
                     "include": True,
-                    "Flags": flags(file, eliv),
+                    "Flags": get_flags(file, eliv),
                 }
             )
             id += 1
             remove += 1
-            songs_df = pl.concat([songs_df, df])
+            songs_df.extend(df)
             logger.info(f"[Song][+] {artist} - {name}")
 
         if remove == len(songs):
@@ -108,9 +150,11 @@ def update_csv() -> None:
         json_data.pop(date)
         logger.info(f"All songs from {date} treated, removed stream")
 
+    # Updates JSON file with treated songs removed
     with open(SONGS_JSON, "w") as f:
         json.dump(json_data, f, indent=2, ensure_ascii=False)
 
+    # Write modifications if both CSVs
     songs_df.write_csv(SONGS_CSV)
     dates_df.write_csv(DATES_CSV)
 

@@ -45,27 +45,39 @@ def standalone_set_includes() -> None:
         set_includes(config["disabled-flags"])
 
 
-def new_batch() -> None:
+def new_batch_detection() -> None:
+    """Re-runs the song detection based on regex. Adds songs that aren't already in\
+        the database in a JSON file for them to be reviewed.
+    """
     format_logger(verbosity=5, log_file=LOG_DIR / "batches.log")
+    # These 3 lines could be ine call, but it would just make the code less clear
     songs = pl.read_csv(SONGS_CSV)
-    out = extract_all(songs)
-    export_json(out)
+    out = extract_all(songs)  # Exctacts data
+    export_json(out)  # Writing into JSON
 
 
 def generate_songs() -> None:
+    """Generates all songs files. For each files it first copies the files into\
+    its destination, then edits the metadata of the destination file. This is\
+    just to avoid tempering the original files."""
+
     format_logger(log_file=LOG_DIR / "generation.log")
     logger.info("[GEN] Starting generation batch")
 
+    # Loading config file
     with open("config.yml", "r") as file:
         config = yaml.safe_load(file)
 
+    # Output folder
     OUT = Path(config["out-path"])
     os.makedirs(OUT, exist_ok=True)
 
+    # If the disabled songs are generated, set their folder and create it if needed
     if config["generate-disabled"]:
         OUT_DIS = Path(config["diabled-path"])
         os.makedirs(OUT_DIS, exist_ok=True)
 
+    # Filtered
     if config["automatically-disable-songs"]:
         set_includes(config["disabled-flags"])
 
@@ -76,24 +88,24 @@ def generate_songs() -> None:
     N_SONGS = len(songs)
 
     dates = pl.read_csv(DATES_CSV)
+    # Easier data format to deal with
     dates_dict = {k["Date"]: k for k in dates.iter_rows(named=True)}
 
-    i = 0
-    for song_dict in songs.iter_rows(named=True):
-        i += 1
-
+    for i, song_dict in enumerate(songs.iter_rows(named=True)):
         if song_dict["include"]:
             out_dir = OUT
         elif config["generate-disabled"]:  # Not included, but still generated
             out_dir = OUT_DIS
         else:
-            logger.debug(f"[GEN] [{i:3d}/{N_SONGS}] Skipped {song_dict['Song']}")
+            logger.debug(f"[GEN] [{i + 1:3d}/{N_SONGS}] Skipped {song_dict['Song']}")
             continue
 
-        logger.debug(f"[GEN] [{i:3d}/{N_SONGS}] Generating {song_dict['Song']}")
+        logger.debug(f"[GEN] [{i + 1:3d}/{N_SONGS}] Generating {song_dict['Song']}")
+        # Differenciate songs from drive and custom songs. Mainly because they aren't
+        # from the same contexts (streams vs collabs mainly)
         if Path(song_dict["File_IN"]).is_relative_to(DRIVE_DIR):
-            d_dict = dates_dict.get(song_dict["Date"], {})
-            s = DriveSong(song_dict, d_dict)
+            date_dict = dates_dict.get(song_dict["Date"], {})
+            s = DriveSong(song_dict, date_dict)
         else:
             s = CustomSong(song_dict)
         s.create_out_file(create=True, out_dir=out_dir)

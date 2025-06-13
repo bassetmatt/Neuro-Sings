@@ -84,7 +84,7 @@ class Song:
         img = APIC(
             encoding=3,  # 3 is for utf-8
             mime="image/jpeg",  # image/jpeg or image/png
-            type=3,  # 3 is for the cover image
+            type=18,  # 3 is for the cover image
             desc="Cover",
             data=open(cover, "rb").read(),
         )
@@ -234,13 +234,14 @@ class CustomSong(Song):
         img.close()
 
         image = Picture()
-        image.type = 3
+        image.type = 18
         image.mime = "image/jpeg"
         image.desc = "Cover"
         image.data = image_file
         return image
 
     def apply_tags_vorbis(self) -> None:
+        # Based on https://exiftool.org/TagNames/Vorbis.html tags descriptions
         file = FLAC(self.outfile)
         if file.tags is None:
             logger.error(f"File {self.file} has no tags header.")

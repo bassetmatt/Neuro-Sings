@@ -34,7 +34,8 @@ def check_ascii() -> None:
 def check_hash() -> None:
     """Checks if the hash from files match the hash in the database (long)."""
     songs = pl.read_csv(SONGS_CSV)
-    for song in tqdm(songs.iter_rows(named=True)):
+    logger.debug("Checking files' hashes")
+    for song in tqdm(songs.iter_rows(named=True), total=len(songs)):
         file = ROOT_DIR / Path(song["File_IN"])
         assert file.exists()
         hash = song["Hash_IN"]
