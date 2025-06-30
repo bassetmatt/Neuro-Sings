@@ -1,15 +1,10 @@
 # TODO
-
-- [x] Have automatic filters for include flag
-- [x] Duplicate Tag with copy of files
-  - [x] v3
-  - [x] v1 (ugh)
 - [ ] Run the gain thing (mp3gain/qtgain)
-- [ ] Use tags to create custom lists
+- [ ] Create preset from tags
   - [ ] Like which tags to include/exclude, where to store them, have prefix/suffix
-  - [ ] Add Neuro tag
+  - [x] Add Neuro tag
+  - [x] Config file has presets
 - [ ] Disclaimers in README
-
 - [x] Switch config to TOML
 - [ ] Write documentation
   - [x] checks

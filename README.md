@@ -10,7 +10,8 @@ pdm install
 ### More details
 TODO
 
-
+### Windows
+TODO?
 
 ## New batch
 Latest: 25-06-2025

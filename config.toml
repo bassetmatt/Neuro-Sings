@@ -1,6 +1,6 @@
 [output]
-# Path for output songs, from project root
-path = "out/used"
+use-root = true
+out-root = "out" # Can be relative or absolute
 
 [disabled]
 # Whether to generate or not the songs marked as disabled
@@ -14,3 +14,45 @@ path = "out/disabled"
 auto-disable = true
 # Flags to target when automatically disabling files
 flags = ["v1", "v2", "duplicate"]
+
+
+[[presets]]
+name = "Main"
+include-flags = ["neuro", "evil", "duet"]
+exclude-flags = ["v1", "v2", "duplicate"]
+# From root
+path = "main"
+
+[[presets]]
+name = "Old"
+include-flags = ["v1", "v2"]
+exclude-flags = ["duplicates"]
+# From root
+path = "v1v2"
+
+[[presets]]
+name = "Duplicates"
+include-flags = ["duplicates"]
+exclude-flags = []
+# From root
+path = "duplicates"
+
+
+# Other examples of presets
+# [[presets]]
+# name = "Neuro"                                            #v3 only
+# include-flags = ["neuro"]
+# exclude-flags = ["duet", "evil", "v1", "v2", "duplicate"]
+# path = "neuro"
+
+# [[presets]]
+# name = "Evil"
+# include-flags = ["evil"]
+# exclude-flags = ["duet", "neuro", "v1", "v2", "duplicate"]
+# path = "evil"
+
+# [[presets]]
+# name = "Duets"
+# include-flags = ["duet"]
+# exclude-flags = ["v1", "v2", "duplicate"]
+# path = "duets"
