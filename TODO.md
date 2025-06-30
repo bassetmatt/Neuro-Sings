@@ -6,7 +6,7 @@
   - [x] Config file has presets
   - [ ] Have prefix/suffix possible for files with each prefix?
   - [ ] Someday have more complex flag selection with AND/OR
-- [ ] Disclaimers in README
+- [x] Disclaimers in README
 - [ ] Write documentation
   - [x] checks
   - [x] json_to_csv
@@ -20,6 +20,3 @@
   - [ ] Also as source of songs.csv
 
 - [ ] Bundle all CLI things in a python file to ease the command typing
-
-- [ ] Write unit tests lol ???
-- [ ] Multithread file creation to be faster lmao ???
