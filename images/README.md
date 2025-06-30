@@ -13,6 +13,7 @@
   - Neuro v2 Evil v2
 
 ## Custom - Screens
+Screenshots from streams, maybe sometimes some light editing to fit both singers in a square thumbnail
 ### Collabs
 - I see the light Miyune
 - Rises the moon
@@ -62,7 +63,7 @@ Most I got the HQ image, else it's 200x200
 - Knock yourself out: key [Twitter](https://x.com/soulgluttony/status/1938281277464990173#m)
 
 ### Other
-Weiward: https://www.youtube.com/watch?v=AcmkFxdmgmA
+Weiward: [Youtube](https://www.youtube.com/watch?v=AcmkFxdmgmA)
 Sonic: https://x.com/mae_has_art, from discord [here](https://discord.com/channels/1327042091200807024/1376733854944989264/1376733854944989264)
 
 ## Subathon

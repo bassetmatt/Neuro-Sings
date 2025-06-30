@@ -13,20 +13,21 @@ TODO
 
 
 ## New batch
+Latest: 25-06-2025
 ### For me
 - [x] Get the new song names + order
 - [x] Download new drive songs `rclone copy -v gdrive:Neuro songs/drive`
-- [x] Generate json `detect`
+- [x] Generate json `update-json`
 - [x] Sanitize json
   - [x] Check Artists name, check coherency with database with queries
   - [x] Set track number
   - [x] ASCII check
-- [x] Update the csv database `json-to-csv`
+- [x] Update the csv database `update-csv`
 - [x] Check for errors again
 - [x] Run all checks `db-check`
-- [x] Generate new thumbnails `thumbnails`
+- [x] Generate new thumbnails `thumbnails-generate`
   - [x] If not in the date png, add the new date
-- [x] Generate songs `generate`
+- [x] Generate songs `songs-generate`
 - [x] Profit
 
 *Note*: Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"`, `"Artist ASCII": "DECO 27"`

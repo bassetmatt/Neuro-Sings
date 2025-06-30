@@ -1,7 +1,7 @@
 # Song List
 ## Sources
-Before 25-01-2023: [Official VODS](https://www.youtube.com/@Neuro-samaVods)
-26-01-2023/01-05-2023: [Unofficial VODS](https://www.youtube.com/@Neuro-samaUnofficialVODs)
+Before 25-01-2023: [Official VODS](https://www.youtube.com/@Neuro-samaVods)\
+26-01-2023/01-05-2023: [Unofficial VODS](https://www.youtube.com/@Neuro-samaUnofficialVODs)\
 After 02-05-2023: [Neuro Archiver](https://www.youtube.com/@NArchiver)
 
 ## v1 Pre-karaoke
@@ -1364,7 +1364,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 18. (Evil & Neuro Duet) Halestorm & Prevail - can u see me in the dark: 02:04:33
 
 
-### 11-06-2025 [here]
+### 11-06-2025 (Neuro) [here](https://youtu.be/hT-p4XGNB8k)
 1. Be Human - Scott Matthew: 7:00
 2. 4nim0sity|99.999999999% - Ichi: 13:54
 3. Bugs - Ellie Minibot: 20:24
@@ -1384,6 +1384,27 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 17. Skies Forever Blue - Itoki Hana & Toby Fox: 1:52:26
 18. (Duet) Die With A Smile - Lady Gaga & Bruno Mars: 1:59:55
 
+
+### 25-06-2025 (Evil) [here](https://youtu.be/bkR4vqB2Qdk)
+1. Nirvana - Smells Like Teen Spirit: 11:12
+2. Jaime Christopherson - Red Sun: 19:05
+3. Manuel - GAS GAS GAS: 24:06
+4. niki - Jitter Doll: 31:29
+5. King Gizzard & The Lizard Wizard - Robot Stop: 38:22
+6. Architects - Animals: 46:44
+7. mekaloton - Metamachine: 53:35
+8. The Rolling Stones - Paint it, Black: 59:12
+9. The Cardigans - My Favourite Game: 01:05:31
+10. Hoshimachi Suisei - BIBBIDIBA: 01:11:55
+11. Sia - Chandelier: 01:17:26
+12. The White Stripes - Seven Nation Army: 01:23:53
+13. Lady Gaga - Americano: 01:30:38
+14. (Duet) Alan Walker - All Falls Down: 01:37:32
+15. Yuyoyuppe - Leia: 01:43:52
+16. (Duet) Breaking Benjamin - Blow Me Away: 01:50:57
+17. Porter Robinson - Knock Yourself Out XD: 01:57:25
+18. (Duet) BPM15Q - Rad Rad: 02:03:07
+19. Evil Neuro - BOOM: 02:09:38
 
 ## Collabs
 ### "Official" (not on stream, separate release)
@@ -1431,13 +1452,16 @@ Put as special album: Collabs, list in order
 
 ## Subathon
 Special album: Subathon covers
-#### Year 1
+
+### Year 1
 1. Subathon Mashup
 2. Hey Neuro (Nee Neuro)
 3. Crossing fields
 
-#### Year 2
+### Year 2
 4. Subathon Mashup 2
 5. Viva la vida fallen Kingdom
 
-Originals: Life
+## Originals
+1. LIFE (Neuro)
+2. BOOM (Evil)
