@@ -6,8 +6,8 @@ import polars as pl
 from loguru import logger
 
 from neuro import DATES_CSV, LOG_DIR, SONGS_CSV, SONGS_DB, SONGS_JSON
+from neuro.detection import SongEntry, SongJSON
 from neuro.polars_utils import load_dates, load_db
-from neuro.song_detect import SongEntry, SongJSON
 from neuro.utils import file_check, format_logger, get_sha256
 
 

@@ -50,11 +50,11 @@ TODO: Detail drives maybe?
 
 ### Code files
 - `checks.py`
+- `detection.py`
+- `file_tags.py`
 - `json_to_csv.py`
 - `polars_utils.py`
 - `run.py`
-- `song_detect.py`
-- `song_tags.py`
 - `thumbnails.py`
 - `utils.py`
 

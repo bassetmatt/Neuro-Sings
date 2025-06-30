@@ -4,15 +4,15 @@ version = "0.1.0"
 description = "Formatting Neuro songs to be better in media players"
 authors = [{ name = "Matthieu Basset", email = "bassetmatt@gmail.com" }]
 dependencies = [
-    "mutagen>=1.47.0",
-    "pillow>=11.2.1",
-    "loguru>=0.7.3",
-    "polars>=1.30.0",
-    "tqdm>=4.67.1",
-    "pandas>=2.3.0",
-    "sqlalchemy>=2.0.41",
-    "pyarrow>=20.0.0",
     "connectorx>=0.4.3",
+    "loguru>=0.7.3",
+    "mutagen>=1.47.0",
+    "pandas>=2.3.0",
+    "pillow>=11.2.1",
+    "polars>=1.30.0",
+    "pyarrow>=20.0.0",
+    "sqlalchemy>=2.0.41",
+    "tqdm>=4.67.1",
 ]
 requires-python = ">=3.11, <3.13"
 readme = "README.md"
@@ -25,7 +25,6 @@ thumbnails-generate = "src.neuro.thumbnails:generate_main"
 # thumbnails-old = "src.neuro.thumbnails:generate_oldge"
 update-csv = "src.neuro.json_to_csv:update_csv"
 db-check = "src.neuro.checks:all_tests"
-set-includes = "src.neuro.run:standalone_set_includes"
 
 [build-system]
 requires = ["pdm-backend"]

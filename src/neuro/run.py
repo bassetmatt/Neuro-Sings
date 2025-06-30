@@ -6,9 +6,9 @@ from time import time
 from loguru import logger
 
 from neuro import DRIVE_DIR, LOG_DIR
+from neuro.detection import export_json, extract_all
+from neuro.file_tags import CustomSong, DriveSong
 from neuro.polars_utils import Preset, load_dates, load_db
-from neuro.song_detect import export_json, extract_all
-from neuro.song_tags import CustomSong, DriveSong
 from neuro.utils import format_logger, time_format
 
 DateDict = dict[str, dict[str, str]]

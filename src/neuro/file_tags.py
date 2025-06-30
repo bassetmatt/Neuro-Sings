@@ -15,7 +15,7 @@ from mutagen.id3._frames import APIC
 from PIL import Image
 
 from neuro import IMAGES_COVERS_DIR, IMAGES_CUSTOM_DIR, LOG_DIR, ROOT_DIR
-from neuro.song_detect import SongEntry
+from neuro.detection import SongEntry
 from neuro.utils import file_check, format_logger
 
 
