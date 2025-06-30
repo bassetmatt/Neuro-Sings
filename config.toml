@@ -5,13 +5,25 @@ use-root = true
 # Can be relative or absolute
 out-root = "out"
 
+[features]
+# Needs mp3gain installed and accessible via the path
+activated = ["mp3gain"]
+
+[features.mp3gain]
+# Runs mp3 gain on all files from a preset, it averages the gain over all files for a smoother experience.
+# Warning: It can take a long time !
+# Modes are "per-preset" | "on-all"
+# Per-preset needs to have a boolean on each preset to know if mp3gain is ran
+# On-all just bypasses the boolean, doesn't check for its existence, activates mp3gain for all
+activation = "per-preset"
 
 [[Presets]]
 name = "Main"
-include-flags = ["neuro", "evil", "duet"]
-exclude-flags = ["v1", "v2", "duplicate"]
+include-flags = ["duet", "evil", "neuro"]
+exclude-flags = ["duplicate", "v1", "v2"]
 # From root
 path = "main"
+mp3gain = true
 
 [[Presets]]
 name = "Old"
@@ -19,6 +31,7 @@ include-flags = ["v1", "v2"]
 exclude-flags = ["duplicates"]
 # From root
 path = "v1v2"
+mp3gain = true
 
 [[Presets]]
 name = "Duplicates"
@@ -26,6 +39,7 @@ include-flags = ["duplicate"]
 exclude-flags = []
 # From root
 path = "duplicates"
+mp3gain = false
 
 
 # Other examples of presets
