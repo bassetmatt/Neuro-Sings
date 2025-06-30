@@ -96,7 +96,7 @@ class Song:
             "Artist": self.artist,
             "Album": self.album,
             "Tracknumber": f"{self.track_n}",
-            "date": self.date,
+            "Date": self.date,
         }
 
     @property

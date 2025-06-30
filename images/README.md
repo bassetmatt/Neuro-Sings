@@ -41,7 +41,7 @@
 ### Spotify
 Defaults to 300x300. Trying to get better quality when possible
 - LIFE
-- EVIL (HQ)
+- EVIL (HQ) [Twitter](https://x.com/paccha_7/status/1852118726901977243)
 - MONSTER
 - Call me Maybe
 - Bottom 2
@@ -50,19 +50,21 @@ Defaults to 300x300. Trying to get better quality when possible
 
 ### Boop
 Most I got the HQ image, else it's 200x200
-- CFRB: RiRi Creation https://youtu.be/D1f4VpzkvP8
-- Cure for Me: mr.fish399 https://x.com/MrFish399 https://xcancel.com/MrFish399/status/1883255094982091213#m
-- Lemon Melon Cookie: 零悠 (lingyou)
-- Remote Control: key: https://x.com/soulgluttony
-- VIRUS: key: https://x.com/soulgluttony
-- Propaganda!: key: https://x.com/soulgluttony
-- Ash Again: key: https://x.com/soulgluttony
-- Heat Abnormal: key: https://x.com/soulgluttony (again)
+- CFRB: RiRi Creation [Youtube](https://youtu.be/D1f4VpzkvP8)
+- Cure for Me: mr.fish399 [Twitter](https://x.com/MrFish399/status/1883255094982091213)
+- Lemon Melon Cookie: 零悠 (lingyou) [Twitter](https://x.com/lingyouzzz/status/1917529506417631629/photo/2)
+- Remote Control: key [Twitter](https://x.com/soulgluttony/status/1883650258749833537/photo/1)
+- VIRUS: key [Twitter](https://x.com/soulgluttony/status/1886587515592692024/photo/1)
+- Propaganda!: key [Twitter](https://x.com/soulgluttony/status/1895985454270619817/photo/1)
+- Ash Again: key [Twitter](https://x.com/soulgluttony/status/1922382642759991521/photo/1)
+- Heat Abnormal: key [Twitter](https://x.com/soulgluttony/status/1923448306799165540/photo/1)
 - Tententen: Copper1ion: https://www.youtube.com/watch?v=fkBe1...
+- Knock yourself out: key [Twitter](https://x.com/soulgluttony/status/1938281277464990173#m)
 
 ### Other
 Weiward: https://www.youtube.com/watch?v=AcmkFxdmgmA
 Sonic: https://x.com/mae_has_art, from discord [here](https://discord.com/channels/1327042091200807024/1376733854944989264/1376733854944989264)
+
 ## Subathon
 - Subathon Y1: OG Art (HQ) from Discord
 - Subathon Y2: Screen (Decent quality)
