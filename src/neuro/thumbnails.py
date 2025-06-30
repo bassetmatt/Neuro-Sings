@@ -11,7 +11,6 @@ import polars as pl
 from loguru import logger
 
 from neuro import (
-    DATES_CSV,
     DATES_OLD_CSV,
     IMAGES_BG_DIR,
     IMAGES_COVERS_DIR,
@@ -19,6 +18,7 @@ from neuro import (
     IMAGES_DATES_DIR,
     LOG_DIR,
 )
+from neuro.polars_utils import load_dates
 from neuro.utils import format_logger, time_format
 
 
@@ -237,7 +237,7 @@ def generate_main() -> None:
     logger.info("[THUMB] Starting the generation of thumbnails")
 
     t = time()
-    dates = pl.read_csv(DATES_CSV)
+    dates = load_dates()
 
     N_COVERS = len(dates)
 

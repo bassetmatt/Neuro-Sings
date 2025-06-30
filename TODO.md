@@ -19,6 +19,7 @@
 - [ ] Have my drive as custom source -> Maybe don't put the link on github
   - [ ] Also as source of songs.csv
 
+- [ ] Bundle all CLI things in a python file to ease the command typing
 
 - [ ] Write unit tests lol ???
 - [ ] Multithread file creation to be faster lmao ???

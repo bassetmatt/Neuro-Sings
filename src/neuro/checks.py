@@ -4,11 +4,11 @@ from itertools import chain
 from pathlib import Path
 from string import ascii_letters, digits
 
-import polars as pl
 from loguru import logger
 from tqdm import tqdm
 
-from neuro import LOG_DIR, ROOT_DIR, SONGS_CSV
+from neuro import LOG_DIR, ROOT_DIR
+from neuro.polars_utils import load_db
 from neuro.utils import format_logger, get_sha256
 
 
@@ -17,7 +17,7 @@ def check_ascii() -> None:
     characters by displaying them in the console."""
     ALPHANUM = set(ascii_letters + digits)
 
-    songs = pl.read_csv(SONGS_CSV)
+    songs = load_db()
     no_ascii = songs.get_column("Song").to_list() + songs.get_column("Artist").to_list()
     ascii = songs.get_column("Song_ASCII").to_list() + songs.get_column("Artist_ASCII").to_list()
 
@@ -33,7 +33,7 @@ def check_ascii() -> None:
 
 def check_hash() -> None:
     """Checks if the hash from files match the hash in the database (long)."""
-    songs = pl.read_csv(SONGS_CSV)
+    songs = load_db()
     logger.debug("Checking files' hashes")
     for song in tqdm(songs.iter_rows(named=True), total=len(songs)):
         file = ROOT_DIR / Path(song["File_IN"])
@@ -49,7 +49,7 @@ def check_case(field: str) -> None:
     Args:
         field (str): The field to check, usually Song or Artist.
     """
-    songs = pl.read_csv(SONGS_CSV)
+    songs = load_db()
     cased = set()
     uncased = set()
     for song in songs.rows(named=True):

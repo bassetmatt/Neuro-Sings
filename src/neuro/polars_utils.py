@@ -38,12 +38,12 @@ def stack_or(flag_list: list[str]) -> pl.Expr:
     )
 
 
-def load_db(as_db: bool = False) -> pl.DataFrame:
+def load_db(as_db: bool = True) -> pl.DataFrame:
     """Wrapper to loader the songs DB regardless of the backend format.
 
     Args:
         as_db (bool, optional): If True, will look for a `.db` database, otherwise \
-            looks for a CSV file. Defaults to False.
+            looks for a CSV file. Defaults to True.
 
     Returns:
         pl.DataFrame: A polars DataFrame, regardless of the storage format.
@@ -55,11 +55,11 @@ def load_db(as_db: bool = False) -> pl.DataFrame:
         return pl.read_csv(SONGS_CSV)
 
 
-def load_dates(as_db: bool = False) -> pl.DataFrame:
+def load_dates(as_db: bool = True) -> pl.DataFrame:
     """Same as `load_db`. Loads dates database regardless of format.
 
     Args:
-        as_db (bool, optional): Loads from a `.db` file or not. Defaults to False.
+        as_db (bool, optional): Loads from a `.db` file or not. Defaults to True.
 
     Returns:
         pl.DataFrame: Polars DataFrame with dates.

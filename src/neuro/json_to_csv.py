@@ -5,7 +5,8 @@ from typing import Literal, Optional
 import polars as pl
 from loguru import logger
 
-from neuro import DATES_CSV, LOG_DIR, SONGS_CSV, SONGS_JSON
+from neuro import DATES_CSV, LOG_DIR, SONGS_CSV, SONGS_DB, SONGS_JSON
+from neuro.polars_utils import load_dates, load_db
 from neuro.song_detect import SongEntry, SongJSON
 from neuro.utils import file_check, format_logger, get_sha256
 
@@ -76,8 +77,8 @@ def update_csv() -> None:
         json_data: SongJSON = json.load(f)
 
     # Absolutely doesn't work if the CSV is empty
-    songs_df = pl.read_csv(SONGS_CSV)
-    dates_df = pl.read_csv(DATES_CSV)
+    songs_df = load_db()
+    dates_df = load_dates()
 
     # [-1] Makes sure id=0 if the column is empty
     id = max(songs_df.get_column("id").to_list() + [-1]) + 1
@@ -157,6 +158,9 @@ def update_csv() -> None:
     # Write modifications if both CSVs
     songs_df.write_csv(SONGS_CSV)
     dates_df.write_csv(DATES_CSV)
+    # Write modifications if DBs
+    songs_df.write_database("Songs", f"sqlite:///{SONGS_DB}", if_table_exists="replace")
+    dates_df.write_database("Dates", f"sqlite:///{SONGS_DB}", if_table_exists="replace")
 
 
 if __name__ == "__main__":
