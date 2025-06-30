@@ -10,6 +10,7 @@ DATA_DIR = ROOT_DIR / Path("data")
 
 SONGS_JSON = DATA_DIR / "songs_new.json"
 SONGS_CSV = DATA_DIR / "songs.csv"
+SONGS_DB = DATA_DIR / "songs.db"
 
 DATES_CSV = DATA_DIR / "dates.csv"
 DATES_OLD_CSV = DATA_DIR / "dates_v12.csv"

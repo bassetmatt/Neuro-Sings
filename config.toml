@@ -1,58 +1,52 @@
 [output]
+# If disabled, the path in presets are directly applied, relative or absolute
+# If enabled, the paths in presets must be relative
 use-root = true
-out-root = "out" # Can be relative or absolute
-
-[disabled]
-# Whether to generate or not the songs marked as disabled
-generate = true
-# Path for the disabled song generation (if active)
-path = "out/disabled"
-
-# Whether to automatically disable songs.
-# Warning: it will enable all songs then disable the ones with these flags
-# So any change made outside of this will be lost
-auto-disable = true
-# Flags to target when automatically disabling files
-flags = ["v1", "v2", "duplicate"]
+# Can be relative or absolute
+out-root = "out"
 
 
-[[presets]]
+[[Presets]]
 name = "Main"
 include-flags = ["neuro", "evil", "duet"]
 exclude-flags = ["v1", "v2", "duplicate"]
 # From root
 path = "main"
 
-[[presets]]
+[[Presets]]
 name = "Old"
 include-flags = ["v1", "v2"]
 exclude-flags = ["duplicates"]
 # From root
 path = "v1v2"
 
-[[presets]]
+[[Presets]]
 name = "Duplicates"
-include-flags = ["duplicates"]
+include-flags = ["duplicate"]
 exclude-flags = []
 # From root
 path = "duplicates"
 
 
 # Other examples of presets
-# [[presets]]
-# name = "Neuro"                                            #v3 only
+# [[Presets]]
+# #v3 only
+# name = "Neuro"
 # include-flags = ["neuro"]
 # exclude-flags = ["duet", "evil", "v1", "v2", "duplicate"]
+# # From root
 # path = "neuro"
 
-# [[presets]]
+# [[Presets]]
 # name = "Evil"
 # include-flags = ["evil"]
 # exclude-flags = ["duet", "neuro", "v1", "v2", "duplicate"]
+# # From root
 # path = "evil"
 
-# [[presets]]
+# [[Presets]]
 # name = "Duets"
 # include-flags = ["duet"]
 # exclude-flags = ["v1", "v2", "duplicate"]
+# # From root
 # path = "duets"

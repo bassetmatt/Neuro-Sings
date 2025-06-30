@@ -41,20 +41,22 @@ TODO: Detail drives maybe?
 
 
 ## Repo organization
-- images
-- data
-- Song List.md
-- Notes.md
-- Duplicates.md
-- config.yml
+- `images/`
+- `data/`
+- `Song List.md`
+- `Notes.md`
+- `Duplicates.md`
+- `config.toml`
+
 ### Code files
-- checks
-- json_to_csv
-- run
-- song_detect
-- song_tags
-- thumbnails
-- utils
+- `checks.py`
+- `json_to_csv.py`
+- `polars_utils.py`
+- `run.py`
+- `song_detect.py`
+- `song_tags.py`
+- `thumbnails.py`
+- `utils.py`
 
 ## License
 
