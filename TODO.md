@@ -1,5 +1,5 @@
 # TODO
-- [ ] Run the gain thing (mp3gain/qtgain)
+- [ ] Write the code that actually runs mp3gain
 - [x] Create preset from tags
   - [x] Like which tags to include/exclude, where to store them
   - [x] Add Neuro tag
@@ -12,8 +12,8 @@
   - [x] json_to_csv
   - [x] polars_utils
   - [x] run
-  - [ ] song_detect
-  - [ ] song_tags
+  - [x] detection
+  - [ ] file_tags
   - [x] thumbnails
   - [x] utils
 - [ ] Have my drive as custom source -> Maybe don't put the link on github

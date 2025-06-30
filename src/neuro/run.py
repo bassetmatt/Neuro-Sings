@@ -8,7 +8,7 @@ from loguru import logger
 from neuro import DRIVE_DIR, LOG_DIR
 from neuro.detection import export_json, extract_all
 from neuro.file_tags import CustomSong, DriveSong
-from neuro.polars_utils import Preset, load_dates, load_db
+from neuro.polars_utils import Preset, load_dates
 from neuro.utils import format_logger, time_format
 
 DateDict = dict[str, dict[str, str]]
@@ -20,8 +20,7 @@ def new_batch_detection() -> None:
     """
     format_logger(verbosity=5, log_file=LOG_DIR / "batches.log")
     # These 3 lines could be ine call, but it would just make the code less clear
-    songs = load_db()
-    out = extract_all(songs)  # Exctacts data
+    out = extract_all()  # Exctacts data
     export_json(out)  # Writing into JSON
 
 

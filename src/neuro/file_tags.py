@@ -24,6 +24,7 @@ class Song:
     class Flags:
         v1: bool
         v2: bool
+        neuro: bool
         evil: bool
         duet: bool
         duplicate: bool
@@ -78,6 +79,7 @@ class Song:
         self.init_flags(song_dict["Flags"])
 
     def create_out_file(self) -> None:
+        """Virtual method"""
         raise NotImplementedError
 
     def id3_pic(self, cover: Path) -> APIC:
