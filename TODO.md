@@ -1,5 +1,7 @@
 # TODO
-- [ ] Write the code that actually runs mp3gain
+- [ ] Write the code that actually runs mp3gain. 2 Options
+  - [ ] Write gain value: `mp3gain <file>`
+  - [ ] Force gain change: `mp3gain -r -k <file>`
 - [x] Create preset from tags
   - [x] Like which tags to include/exclude, where to store them
   - [x] Add Neuro tag

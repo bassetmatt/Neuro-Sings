@@ -20,6 +20,8 @@ from neuro.utils import file_check, format_logger
 
 
 class Song:
+    """Represents a Song's Metadata. Abstract class, used for common code between drive/custom songs."""
+
     @dataclass
     class Flags:
         v1: bool
@@ -35,6 +37,13 @@ class Song:
         """Use the same naming convention as custom files for filename"""
 
     def init_flags(self, flags: Optional[str]) -> None:
+        """Detects song's flags by searching substrings in the flags column.\
+            Stores the result in `self.flags`.
+
+        Args:
+            flags (Optional[str]): Content of the flags column
+        """
+
         # flag is false if song has no flags of if it has flags but not the selected one
         def flag_check(flag: str, flag_field: Optional[str]) -> bool:
             if flag_field is None:
@@ -47,6 +56,7 @@ class Song:
         self.flags = self.Flags(**{flag: flag_check(flag, flags) for flag in self.Flags.__dataclass_fields__.keys()})
 
     def __init__(self, song_dict: SongEntry, karaoke_dict: dict = {}) -> None:
+        # Lots of asserts, mainly for type checking, but also detects irregular entries in database
         assert song_dict["Song"] is not None
         assert song_dict["Song_ASCII"] is not None
         self.title: str = song_dict["Song"]
@@ -83,6 +93,14 @@ class Song:
         raise NotImplementedError
 
     def id3_pic(self, cover: Path) -> APIC:
+        """Creates a Cover picture from a given image for files using ID3 tags.
+
+        Args:
+            cover (Path): Path to the image used for cover. File must exist (not checked in function).
+
+        Returns:
+            APIC: Mutagen APIC type picture to be stored in ID3 tags.
+        """
         img = APIC(
             encoding=3,  # 3 is for utf-8
             mime="image/jpeg",  # image/jpeg or image/png
@@ -93,6 +111,11 @@ class Song:
         return img
 
     def get_common_tags(self) -> dict[str, str]:
+        """Gets tags common to both Vorbis and ID3 tags.
+
+        Returns:
+            _ (dict[str, str]): Dictionary with Title, Artist, Album, Track number and Date.
+        """
         return {
             "Title": self.title,
             "Artist": self.artist,
@@ -103,6 +126,11 @@ class Song:
 
     @property
     def album_artist(self) -> str:
+        """Album artist for karaokes. Defined it as a property for consistency with other attributes.
+
+        Returns:
+            str: The artist. Can be Neuro-Sama, Evil Neuro, or Neuro [v1]/[v2].
+        """
         # They are mutually exclusive so it's okay
         if self.flags.v1:
             return "Neuro [v1]"
@@ -114,6 +142,15 @@ class Song:
 
     @property
     def name_tag(self) -> str:
+        """Name tag to be put in brackets in the file name. Defined it as a property for consistency with\
+            other attributes.
+
+        Raises:
+            ValueError: When a song doesn't have at least neuro or evil tag.
+
+        Returns:
+            str: The tag: Neuro, Evil, Duet, Neuro + Vedal, Neuro v1/v2.
+        """
         if self.flags.v1:
             return "Neuro v1"
         if self.flags.v2:
@@ -125,9 +162,22 @@ class Song:
             return "Duet"
         if self.flags.evil:
             return "Evil"
-        return "Neuro"
+        if self.flags.neuro:
+            return "Neuro"
+        # A song must have the Neuro or Evil tag, if it has neither, raise an Error
+        logger.error(f"Song '{self.file}' has no tags to define its tag!")
+        raise ValueError(f"Song '{self.file}' has no tags to define its tag!")
 
     def file_name(self, custom: bool) -> str:
+        """Returns the output filename using song properties.
+
+        Args:
+            custom (bool): Use the drive or custom format. **Warning**: A custom song can use the drive\
+                format if it has the `as_drive` flag, same for a drive song with `as_custom`.
+
+        Returns:
+            str: The filename without type extension.
+        """
         if custom:
             return f"{self.artist_ascii} - {self.title_ascii}"
         else:
@@ -135,19 +185,33 @@ class Song:
 
 
 class DriveSong(Song):
+    """Metadata for a song from the drive."""
+
     def __init__(self, song_dict: dict, karaoke_dict: dict) -> None:
         super().__init__(song_dict, karaoke_dict)
 
     def create_out_file(self, *, out_dir: Path = Path("out"), create: bool = True) -> None:
-        file = self.file
+        """Creates the output file on the filesystem by copying the original. The metadata are written later.
+
+        Args:
+            out_dir (Path, optional): Output directory. Should be defined in the config file. \
+                Defaults to Path("out").
+            create (bool, optional): Force to create a copy of the file even if a file already exists. \
+                Defaults to True.
+        """
+        # Ensures the output directory exists
         os.makedirs(ROOT_DIR / out_dir, exist_ok=True)
+        # If the song is flagged as custom, use the custom format
         name = self.file_name(self.flags.as_custom)
         self.outfile = ROOT_DIR / out_dir / f"{name}.mp3"
 
         if create or (not self.outfile.exists()):
-            shutil.copy2(file, self.outfile)
+            shutil.copy2(self.file, self.outfile)
 
     def apply_tags(self) -> None:
+        """Applies ID3 tags on the file. First uses EasyID3 for text tags. Then ID3 to write the cover
+        picture to the file.
+        """
         # Text tags
         ez_id3 = EasyID3(self.outfile)
 
@@ -174,6 +238,8 @@ class DriveSong(Song):
 
 
 class CustomSong(Song):
+    """Metadata for a song added manually (not from the drive)."""
+
     def __init__(self, song_dict: dict, karaoke_dict: dict = {}) -> None:
         super().__init__(song_dict, karaoke_dict)
 

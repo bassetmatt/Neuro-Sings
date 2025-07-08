@@ -1,3 +1,4 @@
+![Static Badge](https://img.shields.io/badge/latest-2025%2006%2025-a)
 # Neuro-sing-DB
 A project dedicated to creating a database of covers from [Neuro-Sama](https://en.wikipedia.org/wiki/Neuro-sama).
 The main goal of this project is to have an easy way to export all covers for offline uses.
@@ -7,7 +8,7 @@ This project has been realised in Python (3.12) with the use of the [PDM package
 
 ## Downloading songs and new batches
 On each new karaoke the database needs to be updated.\
-**Latest: 25-06-2025**
+Should only be fetching the diffs from my drive.
 
 ### For someone using this project
 Wait for me to do all this work and upload it properly (pls be patient, I try to be fast)
@@ -46,7 +47,7 @@ So even if the audio files are identical, it is possible to generate those "dupl
 - I don't have extended knowledge about vocaloids, so if I put a producer or lyricist or singer as the "Artist" it doesn't mean anyting, I just probbaly took the name indicated or did some very basic search and put the first name I found as the artist. If a name is more appropriated for any given song please tell me.
 - This lack of knowledge extends to pretty much all the artist that I don't know that well. So if a title or artist isn't correct, please tell me.
 - There may be 2-3 exceptions but I don't intend to put all japanese titles in kanas or kanjis.
-- You can create flags in the database, but tags work by scanning the flags column, so don't name a tag to be a substring of another or the code may misbehave.
+- You can create flags in the database, but they work by scanning the flags column, not splitting using the separator, so don't name a flag to be a substring of another or the code may misbehave.
 - There may be instances of DD-MM-YYYY and YYYY-MM-DD dates format in the code, I may someday go through all the code to be more consistent but I'm too lazy for now.
 - I do not own any of the images used for covers, I think I gived proper credit in the README file in the `images/` directory. If credit is missing please notify me.
 
@@ -81,7 +82,8 @@ NOT TESTED
 
 
 ## Repo organization
-- `images/`
+- `images/`: Cover images
+  - dates: The way I generate dates text is cursed, but it works really well for now, so fixing this is really low priority.
 - `data/`
 - `Song List.md`
 - `Notes.md`
