@@ -1406,6 +1406,28 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 18. (Duet) BPM15Q - Rad Rad: 02:03:07
 19. Evil Neuro - BOOM: 02:09:38
 
+
+### 09-07-2025 (Neuro) [here]
+1. Africa - Toto
+2. Bullet With Butterfly Wings - The Smashing Pumpkins
+3. Living Millennium - iyowa
+4. Somebody Told Me - The Killers
+5. Whatever whatever whatever - Neru [Duet]
+6. Bits n' Bytes - Kirāmomo
+7. Die For You - Joji
+8. Somewhere Only We Know - KEANE
+9. Non-Reflection - Aiobahn
+10. Do It All The Time - IDKHOW
+11. Destiny - Harumaki Gohan [Duet]
+12. Though I fear, I still walk - Ippo.tsk
+13. Bye Bye Bye - *NSYNC [Duet]
+14. Song of the Eared Robot - MimiroboP
+15. Sofia - Clairo
+16. The Spine - Darren Korb
+17. The Fresh Princess of Bel-Air - DJ Jazzy Jeff & Neuro-Sama
+18. Life (Acoustic) - Monii
+
+
 ## Collabs
 ### "Official" (not on stream, separate release)
 Put as special album: Collabs, list in order

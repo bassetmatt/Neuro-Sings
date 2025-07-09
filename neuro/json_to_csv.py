@@ -62,6 +62,8 @@ def get_flags(file: Path, eliv: Optional[bool] = None) -> Optional[str]:
             flags += "evil;"
     elif eliv:  # eliv is not None, then it's a bool, and here the bool is True
         flags += "evil;"
+    else:
+        flags += "neuro;"
     if "/Duets" in str(file):
         flags += "duets;"
     if flags == "":
@@ -69,9 +71,9 @@ def get_flags(file: Path, eliv: Optional[bool] = None) -> Optional[str]:
     return flags
 
 
-def update_csv() -> None:
-    """Adds songs from the JSON file to the CSV Songs file. Also updates the\
-        Dates CSV file in case there is a new stream."""
+def update_db() -> None:
+    """Updates the song databse, adding songs in the JSON files that aren't yet in it.
+    The Date CSV/Table is also updated for each new stream."""
     format_logger(log_file=LOG_DIR / "json.log")
     with open(SONGS_JSON, "r") as f:
         json_data: SongJSON = json.load(f)
@@ -135,7 +137,6 @@ def update_csv() -> None:
                     "Image": None,
                     "File_IN": str(file),
                     "Hash_IN": get_sha256(file),
-                    "include": True,
                     "Flags": get_flags(file, eliv),
                 }
             )
@@ -164,4 +165,4 @@ def update_csv() -> None:
 
 
 if __name__ == "__main__":
-    update_csv()
+    update_db()

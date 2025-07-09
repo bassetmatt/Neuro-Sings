@@ -23,7 +23,7 @@ songs-generate = "neuro.run:generate_songs"
 update-json = "neuro.run:new_batch_detection"
 thumbnails-generate = "neuro.thumbnails:generate_main"
 # thumbnails-old = "neuro.thumbnails:generate_oldge"
-update-csv = "neuro.json_to_csv:update_csv"
+update-db = "neuro.json_to_csv:update_db"
 db-check = "neuro.checks:all_tests"
 
 [build-system]

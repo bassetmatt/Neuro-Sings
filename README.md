@@ -1,4 +1,5 @@
-![Static Badge](https://img.shields.io/badge/latest-2025%2006%2025-a)
+
+![Static Badge](https://img.shields.io/badge/latest-2025%2007%2009-a)
 # Neuro-sing-DB
 A project dedicated to creating a database of covers from [Neuro-Sama](https://en.wikipedia.org/wiki/Neuro-sama).
 The main goal of this project is to have an easy way to export all covers for offline uses.
@@ -29,9 +30,9 @@ TODO: Detail drives maybe? And detail how to contact me
 - [x] Run all checks `db-check`
 - [x] Generate new thumbnails `thumbnails-generate`
   - [x] If not in the date png, add the new date
-- [x] Generate songs `songs-generate`
-- [x] Upload the result to the drive
-- [x] Profit
+- [ ] Generate songs `songs-generate`
+- [ ] Upload the result to the drive
+- [ ] Profit
 
 *Note*: Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"`, `"Artist ASCII": "DECO 27"`
 

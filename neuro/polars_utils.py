@@ -6,7 +6,7 @@ from typing import Optional
 
 import polars as pl
 
-from neuro import DATES_CSV, SONGS_CSV, SONGS_DB
+from neuro import DATES_CSV, ROOT_DIR, SONGS_CSV, SONGS_DB
 
 
 def flag_expr(flag: str) -> pl.Expr:
@@ -38,21 +38,22 @@ def stack_or(flag_list: list[str]) -> pl.Expr:
     )
 
 
-def load_db(as_db: bool = True) -> pl.DataFrame:
+def load_db(as_db: bool = True, root: Path = ROOT_DIR) -> pl.DataFrame:
     """Wrapper to loader the songs DB regardless of the backend format.
 
     Args:
         as_db (bool, optional): If True, will look for a `.db` database, otherwise \
             looks for a CSV file. Defaults to True.
+        root (Path, optional): Root dir to search the database from.Defaults to ROOT_DIR.
 
     Returns:
         pl.DataFrame: A polars DataFrame, regardless of the storage format.
     """
     if as_db:
         REQ = "SELECT * FROM Songs"
-        return pl.read_database_uri(REQ, f"sqlite://{SONGS_DB}")
+        return pl.read_database_uri(REQ, f"sqlite://{root / SONGS_DB}")
     else:
-        return pl.read_csv(SONGS_CSV)
+        return pl.read_csv(root / SONGS_CSV)
 
 
 def load_dates(as_db: bool = True) -> pl.DataFrame:
