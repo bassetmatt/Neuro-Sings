@@ -1,5 +1,7 @@
 """Some checks to run on files"""
 
+import os
+import tomllib as toml
 from itertools import chain
 from pathlib import Path
 from string import ascii_letters, digits
@@ -76,6 +78,18 @@ def check_case(field: str) -> None:
         logger.success(f"No casing inconsistency found in field '{field}'")
 
 
+def check_mp3gain() -> None:
+    with open("config.toml", "rb") as file:
+        config = toml.load(file)
+    if "mp3gain" in config["features"]["activated"]:
+        if os.system("mp3gain -q") != 0:
+            logger.error("mp3gain activated, but executable not found")
+        else:
+            logger.success("mp3gain executable found")
+    else:
+        logger.info("Not checking for mp3gain as option isn't activated")
+
+
 def all_tests() -> None:
     """Runs all checks defined in this file"""
     format_logger(log_file=LOG_DIR / "checks.log")
@@ -83,6 +97,7 @@ def all_tests() -> None:
     check_case("Artist")
     check_case("Song")
     check_hash()
+    check_mp3gain()
 
 
 if __name__ == "__main__":

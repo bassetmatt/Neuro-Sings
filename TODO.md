@@ -9,13 +9,13 @@
   - [ ] Have prefix/suffix possible for files with each prefix?
   - [ ] Someday have more complex flag selection with AND/OR
 - [x] Disclaimers in README
-- [ ] Write documentation
+- [x] Write documentation
   - [x] checks
   - [x] json_to_csv
   - [x] polars_utils
   - [x] run
   - [x] detection
-  - [ ] file_tags
+  - [x] file_tags
   - [x] thumbnails
   - [x] utils
 - [ ] Have my drive as custom source -> Maybe don't put the link on github

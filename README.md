@@ -9,7 +9,8 @@ This project has been realised in Python (3.12) with the use of the [PDM package
 
 ## Downloading songs and new batches
 On each new karaoke the database needs to be updated.\
-Should only be fetching the diffs from my drive.
+Should only be fetching the diffs from my drive.\
+I recommand using a tool like [rclone](https://rclone.org/) or any alternative to just download the diff instead or redownloading everything everytime.
 
 ### For someone using this project
 Wait for me to do all this work and upload it properly (pls be patient, I try to be fast)
@@ -19,7 +20,7 @@ TODO: Detail drives maybe? And detail how to contact me
 
 ### For me (for each batch)
 - [x] Get the new song names + order
-- [x] Download new drive songs `rclone copy -v gdrive:Neuro songs/drive`
+- [x] Download new drive songs `rclone sync -v gdrive:Neuro songs/drive`
 - [x] Generate json `update-json`
 - [x] Sanitize json
   - [x] Check Artists name, check coherency with database with queries
@@ -30,9 +31,9 @@ TODO: Detail drives maybe? And detail how to contact me
 - [x] Run all checks `db-check`
 - [x] Generate new thumbnails `thumbnails-generate`
   - [x] If not in the date png, add the new date
-- [ ] Generate songs `songs-generate`
-- [ ] Upload the result to the drive
-- [ ] Profit
+- [x] Generate songs `songs-generate`
+- [x] Upload the result to the drive `rclone sync -v --copy-links --exclude .directory out gdrive:Neuro-Custom/`
+- [x] Profit
 
 *Note*: Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"`, `"Artist ASCII": "DECO 27"`
 
@@ -58,11 +59,12 @@ TODO
 
 ## Setup
 All this setup is written using a Linux environment, I don't have a Windows environment to test right now.
-### tl;dr
+### tl;dr (Linux)
 [Install pipx](https://pipx.pypa.io/stable/installation/)
 ```bash
 pipx install pdm
 pdm install
+eval $(pdm venv activate)
 ```
 
 ### More details
@@ -70,16 +72,37 @@ pdm install
 2. Check if you have python installed, pipx should install it anyways.
 3. Install pdm via pipx by typing `pipx install pdm`.
 4. On the root of the project run `pdm install` to download the packages and create scripts shortcuts.
-5. Activate venv for python `eval $(pdm venv activate for-test)` on linux, see [this part of the documentation](https://pdm-project.org/en/latest/usage/venv/#activate-a-virtualenv)
+5. Activate venv for python `eval $(pdm venv activate)` on linux, see [this part of the documentation](https://pdm-project.org/en/latest/usage/venv/#activate-a-virtualenv)
 6. Run the scripts you want. [See this part](#scripts)
 
 ### Windows
 NOT TESTED
 
 1. Install [scoop.sh](https://scoop.sh/)
-2. Use scoopy to install pipx and python 3.12 (python312 in versions bucket)
+2. Use scoop to install pipx and python 3.12 (python312 in versions bucket)
 3. Install pdm via pipx
 4. The lockfile may be linux-specific, if you encounter any problems, you may delete the lockfile.
+
+## Config file
+There is a config file in the root directory: `config.toml`. This section will detail its options.
+
+### Output
+This section simply defines a folder where all files are exported (in subdirectories).
+
+### Features
+As of now, the only feature available is to use [`mp3gain`](https://mp3gain.sourceforge.net). To disable a feature, just remove its name from the "activated" array.
+#### mp3gain
+> [!WARNING]
+> This option increases the song generation time by a lot! Also some options modify the file volume directly. Also mp3gain needs to be installed an available in the PATH.
+
+Its goal is to normalize the gain across all files for a more pleasant experience.\
+The more detailed options are described in the file.
+
+### Presets
+These are the main parts of the config files. They define groups that are generated and output in a given directory.\
+Each preset is defined by the flags to include and to exclude. The preset is defined by all the files that have one of the include flags and has none of the exclude flags.\
+You can create as many presets as you want, they can totaly overlap.\
+Some examples are commented out.
 
 
 ## Repo organization

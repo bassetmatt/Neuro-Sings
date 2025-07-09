@@ -244,6 +244,14 @@ class CustomSong(Song):
         super().__init__(song_dict, karaoke_dict)
 
     def create_out_file(self, *, out_dir: Path, create: bool = True) -> None:
+        """Creates the output file on the filesystem by copying the original. The metadata are written later.
+
+        Args:
+            out_dir (Path, optional): Output directory. Should be defined in the config file. \
+                Defaults to Path("out").
+            create (bool, optional): Force to create a copy of the file even if a file already exists. \
+                Defaults to True.
+        """
         file = self.file
         ext = file.suffix
 
@@ -254,6 +262,12 @@ class CustomSong(Song):
             shutil.copy2(file, self.outfile)
 
     def apply_tags(self) -> None:
+        """Custom Song version of the tag management. Here it needs to check the file's format first\
+            to apply the right type of tag.
+
+        Raises:
+            ValueError: If the file isn't a .mp3 or .flac file.
+        """
         ext = self.file.suffix
         if self.image is None:
             logger.error(f"Image can't be None for custom song {self.file}")
@@ -267,10 +281,11 @@ class CustomSong(Song):
             case ".flac":
                 self.apply_tags_vorbis()
             case _:
-                logger.error(f"Wrong file suffix for {self.file}")
-                raise ValueError
+                logger.error(f"Unimplemented file suffix for {self.file}")
+                raise ValueError(f"Unimplemented file suffix for {self.file}")
 
     def apply_id3(self) -> None:
+        """ID3 version of the metadata management. Similar to the one for Drive Songs."""
         ez_id3 = EasyID3(self.outfile)
 
         common_props = self.get_common_tags()
@@ -286,6 +301,12 @@ class CustomSong(Song):
         id3.save()
 
     def get_flac_pic(self) -> Picture:
+        """Generates a picture for a FLAC file's cover. This very particular method works, so\
+            I won't modify it without a valid reason.
+
+        Returns:
+            Picture: The encoded cover picture.
+        """
         img = Image.open(self.cover)
         if img.mode == "RGBA":
             img = img.convert("RGB")
@@ -309,6 +330,11 @@ class CustomSong(Song):
         return image
 
     def apply_tags_vorbis(self) -> None:
+        """FLAC specific tag handling (for 2 files atm...).
+
+        Raises:
+            ValueError: If the file has no tag header present.
+        """
         # Based on https://exiftool.org/TagNames/Vorbis.html tags descriptions
         file = FLAC(self.outfile)
         if file.tags is None:
@@ -317,6 +343,7 @@ class CustomSong(Song):
 
         common = self.get_common_tags()
         for k, v in common.items():
+            # Uppercase totaly unneeded I think
             file.tags[k.upper()] = v  # type: ignore
 
         # Cover

@@ -7,6 +7,7 @@ out-root = "out"
 
 [features]
 # Needs mp3gain installed and accessible via the path
+# More info in README
 activated = ["mp3gain"]
 
 [features.mp3gain]
@@ -15,7 +16,12 @@ activated = ["mp3gain"]
 # Modes are "per-preset" | "on-all"
 # Per-preset needs to have a boolean on each preset to know if mp3gain is ran
 # On-all just bypasses the boolean, doesn't check for its existence, activates mp3gain for all
-activation = "per-preset"
+mode = "per-preset"
+# Whether to juste add a tag giving the gain information or change it directly
+# Options are "gain" | "tag"
+# Gain actually changes the gain of the file, it modifies the file's gain!
+# Tag just writes a tag giving the gain information, doesn't modify the file's audio
+type = "gain"
 
 [[Presets]]
 name = "Main"
@@ -44,7 +50,14 @@ mp3gain = false
 
 # Other examples of presets
 # [[Presets]]
-# #v3 only
+# name = "All"
+# include-flags = ["evil", "neuro"]
+# exclude-flags = []
+# path = "all"
+# mp3gain = false
+
+# [[Presets]]
+# #v3 neuro only
 # name = "Neuro"
 # include-flags = ["neuro"]
 # exclude-flags = ["duet", "evil", "v1", "v2", "duplicate"]
