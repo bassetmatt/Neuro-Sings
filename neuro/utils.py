@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import sys
 from datetime import datetime
+from enum import Enum
 from pathlib import Path
 from typing import TextIO
 
@@ -156,3 +157,19 @@ def time_format(dt: float, precise: bool = False) -> str:
         return f"{dt * 1e6:.2f} μs"
     else:
         return f"{dt * 1e9:.2f} ns"
+
+
+class MP3GainMode(Enum):
+    """Possible settings for mp3gain. Contains both mode and type options, 2 types would\
+        be too much boilerplate imo.
+    """
+
+    PER_PRESET = 0x0
+    ON_ALL = 0x1
+    OFF = 0xFF
+
+    GAIN = 0x80
+    TAG = 0x81
+
+
+MP3ModeTuple = tuple[MP3GainMode, MP3GainMode]

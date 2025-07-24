@@ -9,13 +9,9 @@ from neuro import DRIVE_DIR, LOG_DIR
 from neuro.detection import export_json, extract_all
 from neuro.file_tags import CustomSong, DriveSong
 from neuro.polars_utils import Preset, load_dates
-from neuro.utils import format_logger, time_format
+from neuro.utils import MP3GainMode, MP3ModeTuple, format_logger, time_format
 
 DateDict = dict[str, dict[str, str]]
-
-
-def run_mp3gain() -> None:
-    pass
 
 
 def new_batch_detection() -> None:
@@ -54,6 +50,7 @@ def generate_from_preset(preset: Preset, dates_dict: DateDict) -> None:
 
         s.create_out_file(create=True, out_dir=preset.path)
         s.apply_tags()
+    run_mp3gain(preset)
     logger.success(f"[GEN] Done converting {N_SONGS} songs in {time_format(time() - t)} !")
 
 
@@ -77,6 +74,8 @@ def generate_songs() -> None:
     else:
         OUT_ROOT = None
 
+    mp3gain = parse_mp3gain(config)
+
     # Start time
     t = time()
 
@@ -85,10 +84,85 @@ def generate_songs() -> None:
 
     for preset in config["Presets"]:
         logger.info(f"[GEN] Generating preset '{preset['name']}'")
-        preset_obj = Preset(preset, OUT_ROOT)
+        preset_obj = Preset(preset, mp3gain, OUT_ROOT)
         generate_from_preset(preset_obj, dates_dict)
 
     logger.success(f"[GEN] Generated all presets in {time_format(time() - t)} !")
+
+
+def parse_mp3gain(config: dict) -> MP3ModeTuple:
+    """Gets the mp3gain global config from the config file.
+
+    Args:
+        config (dict): Dictionnary representing the whole configuration file.
+
+    Raises:
+        ValueError: If the configuration has unexpected.
+
+    Returns:
+        MP3ModeTuple: Tuple with the mode (per-preset or on-all) and the type \
+            of gain modification (tag or gain on file).
+    """
+    mp3gain: MP3ModeTuple
+    if "mp3gain" in config["features"]["activated"]:
+        mp3_config = config["features"]["mp3gain"]
+        match mp3_config["mode"]:
+            case "per-preset":
+                mode = MP3GainMode.PER_PRESET
+            case "on-all":
+                mode = MP3GainMode.ON_ALL
+            case x:
+                logger.error(f"Unknown mp3gain mode '{x}'")
+                raise ValueError(f"Unknown mp3gain mode '{x}'")
+        match mp3_config["type"]:
+            case "gain":
+                type = MP3GainMode.GAIN
+            case "tag":
+                type = MP3GainMode.TAG
+        mp3gain = (mode, type)
+    else:
+        mp3gain = (MP3GainMode.OFF, MP3GainMode.OFF)
+
+    return mp3gain
+
+
+def run_mp3gain(preset: Preset) -> None:
+    """Runs gain equalization for a given preset.
+
+    Args:
+        preset (Preset): The preset to run mp3gain on, contains all relevant information.
+    """
+    if preset.mp3gain is MP3GainMode.OFF:
+        return
+    logger.info(f"[GEN] Running mp3gain for preset {preset.name}")
+    options = ""
+    if preset.mp3gain is MP3GainMode.GAIN:
+        options = "-r -k"
+    OUT_LOG = Path(LOG_DIR / "mpgain.log")
+    os.system(f"mp3gain {options} {preset.path}/*.mp3 > {OUT_LOG}")
+
+
+def mp3gain_standalone() -> None:
+    """Runs mp3gain on all presets without creating the files"""
+    format_logger(log_file=LOG_DIR / "generation.log")
+    logger.info("[MP3G] Starting generation batch")
+
+    # Loading config file
+    with open("config.toml", "rb") as file:
+        config = toml.load(file)
+
+    cfg_out = config["output"]
+    if cfg_out["use-root"]:
+        OUT_ROOT = Path(cfg_out["out-root"])
+    else:
+        OUT_ROOT = None
+
+    mp3gain = parse_mp3gain(config)
+
+    for preset in config["Presets"]:
+        logger.info(f"[MP3G] Generating preset '{preset['name']}'")
+        preset_obj = Preset(preset, mp3gain, OUT_ROOT)
+        run_mp3gain(preset_obj)
 
 
 if __name__ == "__main__":

@@ -79,6 +79,7 @@ def check_case(field: str) -> None:
 
 
 def check_mp3gain() -> None:
+    """Checks for the mp3gain executable on the path"""
     with open("config.toml", "rb") as file:
         config = toml.load(file)
     if "mp3gain" in config["features"]["activated"]:

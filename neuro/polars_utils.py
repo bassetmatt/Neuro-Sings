@@ -7,6 +7,7 @@ from typing import Optional
 import polars as pl
 
 from neuro import DATES_CSV, ROOT_DIR, SONGS_CSV, SONGS_DB
+from neuro.utils import MP3GainMode, MP3ModeTuple
 
 
 def flag_expr(flag: str) -> pl.Expr:
@@ -72,7 +73,7 @@ def load_dates(as_db: bool = True) -> pl.DataFrame:
         return pl.read_csv(DATES_CSV)
 
 
-PresetDict = dict[str, str | list[str]]
+PresetDict = dict[str, bool | str | list[str]]
 
 
 class Preset:
@@ -94,11 +95,12 @@ class Preset:
         else:
             return []
 
-    def __init__(self, preset_dict: PresetDict, root: Optional[Path] = None) -> None:
+    def __init__(self, preset_dict: PresetDict, mp3gain_config: MP3ModeTuple, root: Optional[Path] = None) -> None:
         """Preset constructor.
 
         Args:
-            preset_dict (PresetDict): Dict from the TOML loading
+            preset_dict (PresetDict): Dict from the TOML loading.
+            mp3gain_config (MP3ModeTuple): Configuration of mp3gain.
             root (Optional[Path], optional): Root path from outside of the Preset part, if None\
                 then the path in preset is the full path, otherwise they use the root path\
                 as a common folder for all presets. Defaults to None.
@@ -108,6 +110,14 @@ class Preset:
 
         self.include = self.get_list_assert("include-flags")
         self.exclude = self.get_list_assert("exclude-flags")
+
+        self.mp3gain = MP3GainMode.OFF
+        match mp3gain_config[0]:
+            case MP3GainMode.ON_ALL:
+                self.mp3gain = mp3gain_config[1]
+            case MP3GainMode.PER_PRESET:
+                if preset_dict.get("mp3gain", False) is True:
+                    self.mp3gain = mp3gain_config[1]
 
         path = preset_dict["path"]
         assert type(path) is str

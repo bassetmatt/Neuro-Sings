@@ -37,7 +37,7 @@ include-flags = ["v1", "v2"]
 exclude-flags = ["duplicates"]
 # From root
 path = "v1v2"
-mp3gain = true
+mp3gain = false
 
 [[Presets]]
 name = "Duplicates v3"
@@ -45,7 +45,7 @@ include-flags = ["duplicate"]
 exclude-flags = ["v1", "v2"]
 # From root
 path = "duplicates/v3"
-mp3gain = false
+mp3gain = true
 
 [[Presets]]
 name = "Duplicates v1-v2"

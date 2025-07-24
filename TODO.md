@@ -1,8 +1,8 @@
 # TODO
 ## High-prio
-- [ ] Write the code that actually runs mp3gain. 2 Options
-  - [ ] Write gain value: `mp3gain <file>`
-  - [ ] Force gain change: `mp3gain -r -k <file>`
+- [x] Write the code that actually runs mp3gain. 2 Options
+  - [x] Write gain value: `mp3gain <file>`
+  - [x] Force gain change: `mp3gain -r -k <file>`
 
 ## Mid-prio
 - [x] Write documentation
