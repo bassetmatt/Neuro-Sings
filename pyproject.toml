@@ -25,6 +25,8 @@ thumbnails-generate = "neuro.thumbnails:generate_main"
 # thumbnails-old = "neuro.thumbnails:generate_oldge"
 update-db = "neuro.json_to_csv:update_db"
 db-check = "neuro.checks:all_tests"
+drive-pull = "neuro._shortcuts:drive_pull"
+drive-push = "neuro._shortcuts:drive_push"
 
 [build-system]
 requires = ["pdm-backend"]

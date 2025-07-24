@@ -46,7 +46,7 @@ Since this database sorts covers by albums with one album per karaoke stream wit
 So even if the audio files are identical, it is possible to generate those "duplicates" using the same files, so the albums will be complete.
 
 ## Disclaimers
-- I don't have extended knowledge about vocaloids, so if I put a producer or lyricist or singer as the "Artist" it doesn't mean anyting, I just probbaly took the name indicated or did some very basic search and put the first name I found as the artist. If a name is more appropriated for any given song please tell me.
+- I don't have extended knowledge about vocaloids, so if I put a producer or lyricist or singer as the "Artist" it doesn't mean anyting, I just probably took the name indicated or did some very basic search and put the first name I found as the artist. If a name is more appropriated for any given song please tell me.
 - This lack of knowledge extends to pretty much all the artist that I don't know that well. So if a title or artist isn't correct, please tell me.
 - There may be 2-3 exceptions but I don't intend to put all japanese titles in kanas or kanjis.
 - You can create flags in the database, but they work by scanning the flags column, not splitting using the separator, so don't name a flag to be a substring of another or the code may misbehave.
