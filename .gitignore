@@ -2,7 +2,9 @@
 songs
 logs
 .pdm-build
-images
+images/bg
+images/custom
+images/cover
 .pdm-python
 .directory
 out
