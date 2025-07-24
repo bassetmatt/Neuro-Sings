@@ -17,7 +17,7 @@ I recommand using a tool like [rclone](https://rclone.org/) or any alternative t
 Wait for me to do all this work and upload it properly (pls be patient, I try to be fast)
 I should have put a Google Drive link somewhere with all files ready to be downloaded. I don't want to put them on github (even the link). I may send them somewhere on Discord.
 
-TODO: Detail drives maybe? And detail how to contact me
+Right now the drive has the presets described in `config.toml`. The main, v1/v2 and duplicates (with v3 separated). It also has a _inputs directory, ifs content can be copied into the root directory of this project to obtain the full data (images for covers, custom songs and a copy of the data folder).
 
 ### For me (for each batch)
 - [x] Get the new song names + order
@@ -36,9 +36,9 @@ TODO: Detail drives maybe? And detail how to contact me
 - [x] Upload the result to the drive `drive-push`
 - [x] Profit
 
-*Note*: Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"`, `"Artist ASCII": "DECO 27"`
+*Note*: Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"`, `"Artist ASCII": "DECO 27"`.
 
-*Another Note*: Yes calling this "ASCII" isn't really correct, as "*" for example is an ASCII character. It means sanitized, but it was longer and less clear imo. The goal with this field is firstly to make titles/artists compatible with a filename, and also to ease search for songs e.g. P!NK -> PINK
+*Another Note*: Yes calling this "ASCII" isn't really correct, as "*" for example is an ASCII character. It means sanitized, but it was longer and less clear imo. The goal with this field is firstly to make titles/artists compatible with a filename, and also to ease search for songs e.g. P!NK -> PINK.
 
 ## What are "duplicates" ?
 In the databse there are songs with a "duplicate" flag. What is it?\
@@ -56,7 +56,19 @@ So even if the audio files are identical, it is possible to generate those "dupl
 
 
 ## Scripts
-TODO
+All the scripts can be run with `pdm run <script-name>` after you ran `pdm install`.
+#### Generation
+- songs-generate: Generates all presets of songs. Main script!
+- thumbnails-generate: Generates all thumbnails with dates
+#### New batch
+- drive-pull: Pulls files from the main covers' drive
+- update-json: Searches through all present files for untreated files, add them to `data/songs_new.json`
+- update-db: Reads the JSON, if there are new files, adds them to the database
+- db-check: Runs various checks on the database
+- drive-push: Pushes local generated files to  my drive
+#### Others
+- db-sync: Loads one databse (currently the CSV one) and writes its content to both CSV and DB databases, syncing them
+- mp3gain_standalone: Runs mp3gain (can be long) on the database, useful for running it after generating a preset where it wasn't applied
 
 ## Setup
 All this setup is written using a Linux environment, I don't have a Windows environment to test right now.
@@ -107,23 +119,28 @@ Some examples are commented out.
 
 
 ## Repo organization
-- `images/`: Cover images
-  - dates: The way I generate dates text is cursed, but it works really well for now, so fixing this is really low priority.
-- `data/`
-- `Song List.md`
-- `Notes.md`
-- `Duplicates.md`
-- `config.toml`
+### Folders
+- `images/`: Cover images, not hosted on github, should be available on a drive
+  - dates: The way I generate dates text is cursed, but it works really well for now, so fixing this is really low priority
+- `data/`: Databases containing the songs library. Two formats exists: CSV and DB (sqlite), they should both be up to date
+- `neuro/`: source code folder
+### Markdown
+- `Song List.md`: List of all (I think?) songs present, grouped by date mostly
+- `Duplicates.md`: List of duplicates, see [here](#what-are-duplicates-)
+### Other
+- `config.toml`: Configuration file, details on it [here](#config-file)
+- `pyproject.toml`: Project definition, requirements, etc...
 
 ### Code files
-- `checks.py`
-- `detection.py`
-- `file_tags.py`
-- `json_to_csv.py`
-- `polars_utils.py`
-- `run.py`
-- `thumbnails.py`
-- `utils.py`
+- `_shortcuts.py`: Quick CLI shortcuts
+- `checks.py`: Checks to run on code
+- `detection.py`: Searches files matching regex patterns
+- `file_tags.py`: Manages artists/title, etc... Tags for files
+- `json_to_csv.py`: Transfers the data from new batch JSON to the database
+- `polars_utils.py`: Utilitary functions related to the polars library
+- `run.py`: Mainly top-level functions that run whole generation process
+- `thumbnails.py`: Generates thumbnails with dates for songs
+- `utils.py`: Utilitary common functions
 
 ## License
 <sup>
