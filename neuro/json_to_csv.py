@@ -56,7 +56,7 @@ def get_flags(file: Path, eliv: Optional[bool] = None) -> Optional[str]:
     Returns:
         Optional[str]: String with flags if any, None otherwise.
     """
-    flags = ""
+    flags = "v3;"
     if eliv is None:
         if "/Evil" in str(file):
             flags += "evil;"

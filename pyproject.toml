@@ -27,6 +27,7 @@ update-db = "neuro.json_to_csv:update_db"
 db-check = "neuro.checks:all_tests"
 drive-pull = "neuro._shortcuts:drive_pull"
 drive-push = "neuro._shortcuts:drive_push"
+db-sync = "neuro._shortcuts:dbs_sync"
 
 [build-system]
 requires = ["pdm-backend"]

@@ -1097,7 +1097,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 7. kz-livetune - Tell Your World: 48:48
 8. Rascal Flatts - Life is a Highway: 56:03
 9. Duran Duran - INVISIBLE: 01:03:37
-10. (Neuro & Evil Duet) Shoko Nakagawa - Sorairo Days neuro: 01:09:45
+10. (Neuro & Ehttps://youtu.be/bc54vGFvw-k?si=Wt2iEG58ze05GtyTvil Duet) Shoko Nakagawa - Sorairo Days neuro: 01:09:45
 11. Alan Walker - The Spectre: 01:16:55
 12. Mili - Poems of a Machine: 01:22:59
 13. ilem - Pinky Swear: 01:30:28
@@ -1407,7 +1407,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 19. Evil Neuro - BOOM: 02:09:38
 
 
-### 09-07-2025 (Neuro) [here]
+### 09-07-2025 (Neuro) [here](https://youtu.be/bc54vGFvw-k)
 1. Africa - Toto
 2. Bullet With Butterfly Wings - The Smashing Pumpkins
 3. Living Millennium - iyowa
@@ -1426,6 +1426,29 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 16. The Spine - Darren Korb
 17. The Fresh Princess of Bel-Air - DJ Jazzy Jeff & Neuro-Sama
 18. Life (Acoustic) - Monii
+
+
+### 23-07-2025 (Evil) [here](https://youtu.be/LM8BU1ciJg0)
+1. Do I Wanna Know? - Arctic Monkeys
+2. Subways of Your Mind - FEX (Not on drive??)
+3. Aoi, Koi, Daidaiiro No Hi - MASS OF THE FERMENTING DREGS
+4. Livin' La Vida Loca - Ricky Martin
+5. Linger - The Cranberries
+6. Encore Dance - MIMI
+7. Kill Everyone - Hollywood Undead
+8. Universe On Fire - GLORYHAMMER
+9. Year 3000 - Busted [Duet]
+10. Bitter Sweet Symphony - The Verve
+11. Leave Ouy All The Rest - Linkin Park
+12. Petals, and the Voice Which Trails Behind - avaraya
+13. Monster - KIRA
+14. Partners in Crime - Set It Off [Duet]
+15. Mr. Brightside - The Killers
+16. As Alive As You Need Me To Be - Nine Inch Nails
+17. BIRDBRAIN - Jamie Paige
+18. Song of the Ancients - Keiichi Okabe [Duet]
+
+2. Subways of Your Mind - FEX [MISSING]
 
 
 ## Collabs
