@@ -1,5 +1,6 @@
 
-![Static Badge](https://img.shields.io/badge/latest-2025%2007%2009-a)
+![Static Badge](https://img.shields.io/badge/latest-2025%2007%2023-a)
+
 # Neuro-sing-DB
 A project dedicated to creating a database of covers from [Neuro-Sama](https://en.wikipedia.org/wiki/Neuro-sama).
 The main goal of this project is to have an easy way to export all covers for offline uses.
@@ -31,9 +32,9 @@ TODO: Detail drives maybe? And detail how to contact me
 - [x] Run all checks `db-check`
 - [x] Generate new thumbnails `thumbnails-generate`
   - [x] If not in the date png, add the new date
-- [ ] Generate songs `songs-generate`
-- [ ] Upload the result to the drive `rclone sync -v --copy-links --exclude .directory out gdrive:Neuro-Custom/`
-- [ ] Profit
+- [x] Generate songs `songs-generate`
+- [x] Upload the result to the drive `drive-push`
+- [x] Profit
 
 *Note*: Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"`, `"Artist ASCII": "DECO 27"`
 
@@ -93,10 +94,10 @@ This section simply defines a folder where all files are exported (in subdirecto
 As of now, the only feature available is to use [`mp3gain`](https://mp3gain.sourceforge.net). To disable a feature, just remove its name from the "activated" array.
 #### mp3gain
 > [!WARNING]
-> This option increases the song generation time by a lot! Also some options modify the file volume directly. Also mp3gain needs to be installed an available in the PATH.
+> This option increases the song generation time by a lot! Also some options modify the file volume directly. Also mp3gain needs to be installed and available in the PATH.
 
 Its goal is to normalize the gain across all files for a more pleasant experience.\
-The more detailed options are described in the file.
+The more detailed options are described in the config file.
 
 ### Presets
 These are the main parts of the config files. They define groups that are generated and output in a given directory.\

@@ -14,6 +14,10 @@ from neuro.utils import format_logger, time_format
 DateDict = dict[str, dict[str, str]]
 
 
+def run_mp3gain() -> None:
+    pass
+
+
 def new_batch_detection() -> None:
     """Re-runs the song detection based on regex. Adds songs that aren't already in\
         the database in a JSON file for them to be reviewed.
@@ -37,7 +41,7 @@ def generate_from_preset(preset: Preset, dates_dict: DateDict) -> None:
     songs_filtered = preset.get_filtered_df()
     for i, song_dict in enumerate(songs_filtered.iter_rows(named=True)):
         N_SONGS = len(songs_filtered)
-        logger.debug(f"[GEN] [{i + 1:3d}/{N_SONGS}] Generating {song_dict['Song']}")
+        logger.debug(f"[GEN] [{preset.name}] [{i + 1:3d}/{N_SONGS}] Generating {song_dict['Song']}")
 
         # Differenciate songs from drive and custom songs. Mainly because they aren't
         # from the same contexts (streams vs collabs mainly). Their format is different.
