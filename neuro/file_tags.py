@@ -190,7 +190,7 @@ class DriveSong(Song):
     def __init__(self, song_dict: dict, karaoke_dict: dict) -> None:
         super().__init__(song_dict, karaoke_dict)
 
-    def create_out_file(self, *, out_dir: Path = Path("out"), create: bool = True) -> None:
+    def create_out_file(self, *, out_dir: Path = Path("out"), create: bool = True) -> bool:
         """Creates the output file on the filesystem by copying the original. The metadata are written later.
 
         Args:
@@ -198,6 +198,9 @@ class DriveSong(Song):
                 Defaults to Path("out").
             create (bool, optional): Force to create a copy of the file even if a file already exists. \
                 Defaults to True.
+
+        Returns:
+            bool: True if a file was created.
         """
         # Ensures the output directory exists
         os.makedirs(ROOT_DIR / out_dir, exist_ok=True)
@@ -207,6 +210,8 @@ class DriveSong(Song):
 
         if create or (not self.outfile.exists()):
             shutil.copy2(self.file, self.outfile)
+            return True
+        return False
 
     def apply_tags(self) -> None:
         """Applies ID3 tags on the file. First uses EasyID3 for text tags. Then ID3 to write the cover

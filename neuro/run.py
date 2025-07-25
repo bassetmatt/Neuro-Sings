@@ -37,7 +37,6 @@ def generate_from_preset(preset: Preset, dates_dict: DateDict) -> None:
     songs_filtered = preset.get_filtered_df()
     for i, song_dict in enumerate(songs_filtered.iter_rows(named=True)):
         N_SONGS = len(songs_filtered)
-        logger.debug(f"[GEN] [{preset.name}] [{i + 1:3d}/{N_SONGS}] Generating {song_dict['Song']}")
 
         # Differenciate songs from drive and custom songs. Mainly because they aren't
         # from the same contexts (streams vs collabs mainly). Their format is different.
@@ -48,8 +47,12 @@ def generate_from_preset(preset: Preset, dates_dict: DateDict) -> None:
         else:
             s = CustomSong(song_dict)
 
-        s.create_out_file(create=True, out_dir=preset.path)
-        s.apply_tags()
+        created = s.create_out_file(create=False, out_dir=preset.path)
+        if created:
+            s.apply_tags()
+        logger.debug(
+            f"[GEN] [{preset.name}] [{i + 1:3d}/{N_SONGS}] {'Generated' if created else 'Skipped'} {song_dict['Song']}"
+        )
     run_mp3gain(preset)
     logger.success(f"[GEN] Done converting {N_SONGS} songs in {time_format(time() - t)} !")
 
