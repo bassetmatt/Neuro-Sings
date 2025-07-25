@@ -3,6 +3,8 @@
 ![Latest Karaoke](https://img.shields.io/badge/latest-2025--07--23-a)
 ![Python version](https://img.shields.io/badge/Python-3.12-%23306998?logo=python&labelColor=%23ffd43b)
 
+# Neuro-sing-DB
+
 <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
     <a href="images/github/Album-1.png">
         <img src="images/github/Album-1.png" width=125px alt="Album generated">
@@ -24,7 +26,6 @@
     </a>
 </div>
 
-# Neuro-sing-DB
 </div>
 
 A project dedicated to creating a database of covers from [Neuro-Sama](https://en.wikipedia.org/wiki/Neuro-sama).
