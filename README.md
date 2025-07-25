@@ -1,5 +1,30 @@
+<div style="text-align: center;">
 
-![Static Badge](https://img.shields.io/badge/latest-2025%2007%2023-a)
+![Latest Karaoke](https://img.shields.io/badge/latest-2025--07--23-a)
+![Python version](https://img.shields.io/badge/Python-3.12-%23306998?logo=python&labelColor=%23ffd43b)
+
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+    <a href="images/github/Album-1.png">
+        <img src="images/github/Album-1.png" width=150px alt="Album generated">
+    </a>
+    <a href="images/github/Playlist-1.png">
+        <img src="images/github/Playlist-1.png" width=150px alt="Glimpse of the whole laylist">
+    </a>
+    <a href="images/github/Song-1.png">
+        <img src="images/github/Song-1.png" width=150px alt="Song generated (LIFE)">
+    </a>
+    <a href="images/github/Song-2.png">
+        <img src="images/github/Song-2.png" width=150px alt="Song generated (BOOM)">
+    </a>
+    <a href="images/github/Playlist-2.png">
+        <img src="images/github/Playlist-2.png" width=150px alt="Glimpse of the whole laylist">
+    </a>
+    <a href="images/github/Album-2.png">
+        <img src="images/github/Album-2.png" width=150px alt="Album generated">
+    </a>
+</div>
 
 # Neuro-sing-DB
 A project dedicated to creating a database of covers from [Neuro-Sama](https://en.wikipedia.org/wiki/Neuro-sama).
