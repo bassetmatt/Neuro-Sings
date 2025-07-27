@@ -595,6 +595,9 @@ sounds of silence false report v2
 20. Anamanaguchi - Miku (Neuro Ver.): 02:15:43
 21. (Neuro x Evil Duet) Queen - Bohemian Rhapsody: 02:23:24
 
+### 2023-09-21 (Neuro) [here](https://youtu.be/Nzan0Ms6ziA)
+1. Earth, Wind & Fire - September (Around 15:30)
+
 ### 27-09-2023 (Neuro) [here](https://youtu.be/ZwVP48316AE)
 1. JUKE - golden hour: 00:10:48
 2. Avicii - Waiting For Love: 00:18:13
@@ -1488,9 +1491,10 @@ Put as special album: Collabs, list in order
 ## Theme Streams
 1. Wellerman (Neuro Pirate Stream) 2023-07-26
 2. Wellerman Duet (Evil Pirate Stream) 2023-08-11
-3. Happy Halloween (Halloween Stream) 2023-10-31
-4. Spowoky Owoky Pumpkins (Halloween Stream) 2023-10-31
-5. Let You Down (Cyberpunk Stream) 2023-11-05
+3. Interview Stream (September) 2023-09-21
+4. Happy Halloween (Halloween Stream) 2023-10-31
+5. Spowoky Owoky Pumpkins (Halloween Stream) 2023-10-31
+6. Let You Down (Cyberpunk Stream) 2023-11-05
 
 
 ## Subathon
