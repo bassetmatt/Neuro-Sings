@@ -21,7 +21,7 @@ def drive_pull() -> None:
 
 
 def drive_push() -> None:
-    os.system(f"rclone sync {V}--copy-links {EXC}{OUT} {DRIVE_NAME}:Neuro-Custom/")
+    os.system(f"rclone sync {V}--copy-links {EXC}{OUT} {DRIVE_NAME}:Neuro-Sings/")
 
 
 def dbs_sync() -> None:
