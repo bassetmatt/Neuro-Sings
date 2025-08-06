@@ -692,6 +692,10 @@ sounds of silence false report v2
 16. The Killers - Mr Brightside: 2:06:42
 17. Hall & Oates - Out of touch: 2:13:03
 
+### 12-11-2023 [here](https://youtu.be/h945k6JUTmc) | [OG Stream](https://youtu.be/dcrndUa52fA)
+1. 100gecs - MoneyMachine: Around 3h
+
+
 ### 22-11-2023 (Evil) [here](https://youtu.be/LN-YOhbyh1Q)
 1. Evanescence - Going Under: 13:01
 2. Crusher-P - Again: 19:13
@@ -1504,7 +1508,8 @@ Put as special album: Collabs, list in order
 2. I don't want to be an engineer
 3. Bocchi solo
 4. Bocchi group
-5. Queen x King boop mashup ?
+5. Money Machine
+6. Queen x King boop mashup ?
 
 
 ## Theme Streams

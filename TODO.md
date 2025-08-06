@@ -1,8 +1,9 @@
 # TODO
 ## High-prio
-- [ ] Replace money machine with drive source
+- [x] Add v3 Money Machine
 
 ## Mid-prio
+- [ ] Replace github screenshots with poweramp?
 - [ ] Preset prefix/suffix (pass preset to Song)
 - [ ] More complex flag selection with AND/OR
   - [ ] Maybe at first just an option in the preset to tell include-type = "AND" | "OR" (same for exclude). Write stack_and function and check for option in preset.
