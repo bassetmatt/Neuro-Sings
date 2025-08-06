@@ -1451,6 +1451,25 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 17. BIRDBRAIN - Jamie Paige
 18. Song of the Ancients - Keiichi Okabe [Duet]
 
+### 06-08-2025 (Neuro) [here]
+1. Shatter Me - Lindsey Stirling
+2. Happy Lucky Chappy - ano
+3. Heaven - Shihoko Hirata
+4. Hope Is The Thing With Feathers - HOYO-MiX
+5. Buttercup - Jack Stauber
+6. Sis x Love - HoneyWorks [Duet]
+7. Losing My Religion - R.E.M.
+8. Something Just Like This - The Chainsmokers
+9. Touch The Sky - Julie Fowlis
+10. Self Control - Laura Branigan
+11. Telepathy - DECO*27
+12. Are You Bored Yet? - Wallows [Duet]
+13. Lithium - Evanescence
+14. Pretty Little Baby - Connie Francis
+15. One Last Kiss - Utada
+16. Chug Jug With You - Leviathan
+17. I Really Want to Stay at Your House - Rosa Walton
+18. BIRDS OF A FEATHER - Billie Eilish [Duet]
 
 ## Collabs
 ### "Official" (not on stream, separate release)
