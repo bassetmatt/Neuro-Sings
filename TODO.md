@@ -1,6 +1,8 @@
 # TODO
 ## High-prio
-- [x] Add v3 Money Machine
+- [ ] Add a check to verify that both databases are up to date
+  - [ ] Check it before generation to avoid wrong gen
+- [ ] Add the Tempo/Key columns to the database
 
 ## Mid-prio
 - [ ] Replace github screenshots with poweramp?
@@ -8,5 +10,4 @@
 - [ ] More complex flag selection with AND/OR
   - [ ] Maybe at first just an option in the preset to tell include-type = "AND" | "OR" (same for exclude). Write stack_and function and check for option in preset.
   - [ ] Or have a "complex mode" flag, tell if it's AND->OR or OR->AND. And put conditions in arrays of arrays and apply operation 1 between level1 arrays...
-- [ ] Add a check to verify that both databases are up to date
 - [ ] Find where "fnaf.mp3" is from

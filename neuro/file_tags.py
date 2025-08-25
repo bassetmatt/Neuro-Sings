@@ -157,7 +157,7 @@ class Song:
             return "Neuro v2"
         if self.title == "Chinatown Blues":
             return "Neuro + Vedal"
-        # A song can have both evil and duet tags, but the duet tag is prioritized
+        # A song can have both evil/neuro and duet tags, but the duet tag is prioritized
         if self.flags.duet:
             return "Duet"
         if self.flags.evil:
