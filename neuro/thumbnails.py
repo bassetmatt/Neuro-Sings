@@ -165,7 +165,7 @@ def check_stream(stream: dict[str, str]) -> None:
     if year not in ["2023", "2024", "2025"]:
         raise ValueError(f"Wrong year {year}")
 
-    if stream["Singer"] not in ["Neuro", "Evil"]:
+    if stream["Singer"] not in ["Neuro", "Evil", "Twins"]:
         raise ValueError(f"Wrong singer {stream['Singer']}")
 
     if stream["Duet Format"] not in ["v1", "v2v1", "v2"]:
@@ -185,7 +185,7 @@ def singer_match(singer: Singer, version: DuetVersion) -> tuple[int, int]:
 
     Returns:
         solo/duet (tuple[int, int]): Index for solo and duet background images.\
-            Solo: 0 for Neuro v2 | 1 for Neuro v3 | 2 for Evil v1 | 3 for Evil v2.\
+            Solo: 0 for Neuro v2 | 1 for Neuro v3 | 2 for Evil v1 | 3 for Evil v2. | -1 for Twins\
             Duet: 0 for Neuro/Evil v2/v1 | 1 for v3/v1 | 2 for v3/v2.
     """
     match singer:
@@ -199,6 +199,8 @@ def singer_match(singer: Singer, version: DuetVersion) -> tuple[int, int]:
             # v1 in version means Evil v2 wasn't already released
             if "v1" in version:
                 solo = 2
+        case "Twins":
+            solo = -1
 
     match version:
         case "v1":
@@ -257,12 +259,14 @@ def generate_main() -> None:
 
         i_solo, i_duet = singer_match(who, version)
 
-        # Solo thumbnail generation
-        apply_text(
-            SOLO_BG[i_solo],
-            DATES_IMAGES[year],
-            date_idx,
-        ).convert("RGB").save(IMAGES_COVERS_DIR / f"{date}.jpg")
+        # Doesn't generate solo covers for Twins streams
+        if i_solo != -1:
+            # Solo thumbnail generation
+            apply_text(
+                SOLO_BG[i_solo],
+                DATES_IMAGES[year],
+                date_idx,
+            ).convert("RGB").save(IMAGES_COVERS_DIR / f"{date}.jpg")
         # Duet thumbnail generation
         apply_text(
             DUET_BG[i_duet],

@@ -65,7 +65,7 @@ def get_flags(file: Path, eliv: Optional[bool] = None) -> Optional[str]:
     else:
         flags += "neuro;"
     if "/Duets" in str(file):
-        flags += "duets;"
+        flags += "duet;"
     if flags == "":
         flags = None
     return flags
