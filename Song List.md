@@ -1455,7 +1455,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 17. BIRDBRAIN - Jamie Paige
 18. Song of the Ancients - Keiichi Okabe [Duet]
 
-### 06-08-2025 (Neuro) [here]
+### 06-08-2025 (Neuro) [here](https://youtu.be/_oeqG4DVeTY)
 1. Shatter Me - Lindsey Stirling
 2. Happy Lucky Chappy - ano
 3. Heaven - Shihoko Hirata
@@ -1475,6 +1475,26 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 17. I Really Want to Stay at Your House - Rosa Walton
 18. BIRDS OF A FEATHER - Billie Eilish [Duet]
 
+### 20-08-2025 (Twin) [here](https://youtu.be/XSJ_mbEXGVw)
+
+1. NewJeans - GODS: 07:17
+2. MONJOE - Divine: 14:37
+3. The Wanted - Chasing The Sun: 21:15
+4. OZON - Sick of House!: 28:15
+5. Mili - Ga1ahad and Scientific Witchery: 34:52
+6. BABYMETAL - DA DA DANCE: 42:13
+7. Army of Lovers - Crucified: 50:00
+8. Miracle of Sound - Machine Hearts: 57:57
+9. Fleetwood Mac - Dreams: 01:07:51
+10. HIMEHINA - Kiss Kitsune: 01:15:19
+11. HUNTR/X - Golden: 01:21:41
+12. Bill Medley & Jennifer Warnes - (I've Had) The Time of My Life: 01:28:09
+13. inabakumori - I'm the Rain: 01:36:23
+14. CircusP - Deja Vu: 01:43:36
+15. Giga & Kira - GETCHA!: 01:52:36
+16. Culprate - Mechanic Heartbeat: 02:00:05
+17. David Bowie - Space Oddity: 02:06:49
+
 ## Collabs
 ### "Official" (not on stream, separate release)
 Put as special album: Collabs, list in order
@@ -1485,7 +1505,8 @@ Put as special album: Collabs, list in order
 - [x] 4. Rolling girl ft Obkatiekat 26-06-2024
 - [x] 5. Evil ft Camila 31-10-2024
 <!--- 2025 --->
-- [x] 6. Bottom 2 18-04-2025
+- [x] 6. Bottom 2 ft Numi & other people 18-04-2025
+- [x] 7. Mesmerizer ft Bao 19-08-2025
 
 ### Stream Covers
 [I see the light](https://youtu.be/dIyByMwOaD8)
