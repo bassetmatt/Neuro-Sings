@@ -248,7 +248,7 @@ class CustomSong(Song):
     def __init__(self, song_dict: dict, karaoke_dict: dict = {}) -> None:
         super().__init__(song_dict, karaoke_dict)
 
-    def create_out_file(self, *, out_dir: Path, create: bool = True) -> None:
+    def create_out_file(self, *, out_dir: Path, create: bool = True) -> bool:
         """Creates the output file on the filesystem by copying the original. The metadata are written later.
 
         Args:
@@ -256,6 +256,8 @@ class CustomSong(Song):
                 Defaults to Path("out").
             create (bool, optional): Force to create a copy of the file even if a file already exists. \
                 Defaults to True.
+        Returns:
+            bool: True if a file was created.
         """
         file = self.file
         ext = file.suffix
@@ -265,6 +267,8 @@ class CustomSong(Song):
 
         if create or (not self.outfile.exists()):
             shutil.copy2(file, self.outfile)
+            return True
+        return False
 
     def apply_tags(self) -> None:
         """Custom Song version of the tag management. Here it needs to check the file's format first\
