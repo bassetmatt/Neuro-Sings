@@ -136,6 +136,33 @@
 19. After Dark -> Mar 2
 20. Baka Mitai -> Feb 7
 
+### 22-03
+
+2. Can You Feel My Heart -> Jan 30
+3. Teo -> Mar 5
+4. Gee -> Mar 10
+5. Revenge -> Jan 31
+6. It's Been So Long -> Feb 27
+7. Brain Power -> Feb 3
+8. Radioactive -> Mar 13
+9. Call Me Maybe -> Mar 14
+10. Bad Apple -> Mar 12
+11. 39 Music -> Mar 9
+12. Bad Guy -> Feb 16
+13. Godish -> Feb 24
+14. Usseewa -> Mar 3
+15. I am Machine -> Feb 25
+16. I Kissed a Girl -> Mar 7
+
+18. Take On Me -> Feb 28
+19. All Star -> Mar 4
+20. Pokemon -> Mar 15
+21. After Dark -> Mar 2
+22. Enemy -> Feb 2
+23. Shelter -> Feb 10
+
+25. Careless Whisper -> Feb 14
+
 ## v3 [OK]
 ### 11/10/23 - evil
 3. I am Machine, 1st on 30/08/2023

@@ -3,7 +3,8 @@
 - [ ] Add a check to verify that both databases are up to date
   - [ ] Check it before generation to avoid wrong gen
 - [x] Add the Tempo/Key columns to the database
-- [ ] Add pic for Static
+- [x] Add pic for Static
+- [ ] Check output in the file when key is more than 3 chars
 
 ## Mid-prio
 - [ ] Replace github screenshots with poweramp?
