@@ -2,7 +2,8 @@
 ## High-prio
 - [ ] Add a check to verify that both databases are up to date
   - [ ] Check it before generation to avoid wrong gen
-- [ ] Add the Tempo/Key columns to the database
+- [x] Add the Tempo/Key columns to the database
+- [ ] Add pic for Static
 
 ## Mid-prio
 - [ ] Replace github screenshots with poweramp?

@@ -138,6 +138,8 @@ def update_db() -> None:
                     "File_IN": str(file),
                     "Hash_IN": get_sha256(file),
                     "Flags": get_flags(file, eliv),
+                    "Key": None,
+                    "Tempo (1/4 beat)": None,
                 }
             )
             id += 1

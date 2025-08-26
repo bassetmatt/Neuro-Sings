@@ -8,10 +8,9 @@ from pathlib import Path
 from typing import Optional
 
 from loguru import logger
-from mutagen.easyid3 import EasyID3
 from mutagen.flac import FLAC, Picture
 from mutagen.id3 import ID3
-from mutagen.id3._frames import APIC
+from mutagen.id3._frames import APIC, TALB, TBPM, TDRL, TIT2, TKEY, TPE1, TPE2, TRCK, TSO2, TextFrame
 from PIL import Image
 
 from neuro import IMAGES_COVERS_DIR, IMAGES_CUSTOM_DIR, LOG_DIR, ROOT_DIR
@@ -80,6 +79,9 @@ class Song:
         assert song_dict["Album"] is not None
         self.album: str = song_dict["Album"]
 
+        self.key = song_dict["Key"]  # Can be None
+        self.tempo = song_dict["Tempo (1/4 beat)"]  # Can be None
+
         self.image: Optional[str] = song_dict["Image"]
         self.outfile: Optional[Path] = None
 
@@ -110,19 +112,48 @@ class Song:
         )
         return img
 
-    def get_common_tags(self) -> dict[str, str]:
-        """Gets tags common to both Vorbis and ID3 tags.
+    def get_id3_frames(self) -> list[TextFrame]:
+        """Gets tags specific to ID3 tags.
 
         Returns:
-            _ (dict[str, str]): Dictionary with Title, Artist, Album, Track number and Date.
+            _ (list[TextFrame]): Dictionary with Album artist.
         """
-        return {
-            "Title": self.title,
-            "Artist": self.artist,
-            "Album": self.album,
-            "Tracknumber": f"{self.track_n}",
-            "Date": self.date,
+        additional = [
+            # Title
+            TIT2(text=self.title, encoding=3),
+            # Artist
+            TPE1(text=self.artist, encoding=3),
+            # Album
+            TALB(text=self.album, encoding=3),
+            # Year-Month-Day
+            TDRL(text=self.date, encoding=3),
+            # Track number
+            TRCK(text=f"{self.track_n}", encoding=3),
+        ]
+
+        if self.key is not None:
+            # Initial key tag
+            additional.append(TKEY(text=self.key, encoding=3))
+        if self.tempo is not None:
+            # Tempo tag
+            additional.append(TBPM(text=str(self.tempo), encoding=3))
+        return additional
+
+    def get_vorbis_frames(self) -> dict[str, str]:
+        """Gets tags specific to Vorbis comments.
+
+        Returns:
+            dict[str, str]: Dictionary with Album artist.
+        """
+        additional = {
+            "ALBUM": self.album,
+            "ARTIST": self.artist,
+            "DATE": self.date,
+            "TITLE": self.title,
+            "TRACKNUMBER": f"{self.track_n}",
+            "PERFORMER": "Neuro-Sama/Evil Neuro",
         }
+        return additional
 
     @property
     def album_artist(self) -> str:
@@ -218,17 +249,16 @@ class DriveSong(Song):
         picture to the file.
         """
         # Text tags
-        ez_id3 = EasyID3(self.outfile)
+        id3 = ID3(self.outfile)
 
-        common_props = self.get_common_tags()
-        for k, v in common_props.items():
-            ez_id3[k] = v
+        common_props = self.get_id3_frames()
+        for frame in common_props:
+            id3.add(frame)
 
-        ez_id3["Albumartist"] = self.album_artist
-        ez_id3.save()
+        id3.add(TPE2(encoding=3, text=self.album_artist))
+        id3.add(TSO2(encoding=3, text=self.album_artist))
 
         # Cover Image
-        id3 = ID3(self.outfile)
         if self.image is None:
             if self.flags.duet:
                 cover = IMAGES_COVERS_DIR / Path(f"duet-{self.date}.jpg")
@@ -236,6 +266,7 @@ class DriveSong(Song):
                 cover = IMAGES_COVERS_DIR / Path(f"{self.date}.jpg")
         else:
             cover = IMAGES_CUSTOM_DIR / f"{self.image}.jpg"
+
         file_check(cover)
         id3.delall("APIC")
         id3.add(self.id3_pic(cover))
@@ -295,16 +326,20 @@ class CustomSong(Song):
 
     def apply_id3(self) -> None:
         """ID3 version of the metadata management. Similar to the one for Drive Songs."""
-        ez_id3 = EasyID3(self.outfile)
-
-        common_props = self.get_common_tags()
-        for k, v in common_props.items():
-            ez_id3[k] = v
-        ez_id3.save()
-
-        # Cover Image
         id3 = ID3(self.outfile)
 
+        for frame in self.get_id3_frames():
+            id3.add(frame)
+
+        if self.flags.as_drive:
+            album_artist = self.album_artist
+        else:
+            album_artist = "Neuro-Sama/Evil Neuro"
+
+        id3.add(TPE2(encoding=3, text=album_artist))
+        id3.add(TSO2(encoding=3, text=album_artist))
+
+        # Cover Image
         id3.delall("APIC")
         id3.add(self.id3_pic(self.cover))
         id3.save()
@@ -350,7 +385,7 @@ class CustomSong(Song):
             logger.error(f"File {self.file} has no tags header.")
             raise ValueError
 
-        common = self.get_common_tags()
+        common = self.get_vorbis_frames()
         for k, v in common.items():
             # Uppercase totaly unneeded I think
             file.tags[k.upper()] = v  # type: ignore
