@@ -62,6 +62,7 @@ For most of them I got the HQ image, otherwise it's 200x200.
 - Heat Abnormal: key [Twitter](https://x.com/soulgluttony/status/1923448306799165540/photo/1)
 - Tententen: Copper1ion: [Youtube](https://youtu.be/TpallAS3y6k)
 - Knock yourself out: key [Twitter](https://x.com/soulgluttony/status/1938281277464990173#m)
+- Static: key [Discord](https://discord.com/channels/574720535888396288/1392656512081465384/1392656512081465384)
 
 ### Other
 - Weiward: [Youtube](https://www.youtube.com/watch?v=AcmkFxdmgmA)
