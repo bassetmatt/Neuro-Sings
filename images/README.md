@@ -73,3 +73,22 @@ For most of them I got the HQ image, otherwise it's 200x200.
 - Subathon Y2: Screen (Decent quality)
 - Hey Neuro: Screen, animation by ppchan
 - Fallen Kingdom [this](https://discord.com/channels/574720535888396288/1376246629924999260/1376246629924999260)
+
+## Originals
+Credits are in the YT videos
+HQ images found on Youtube by tinkering with URLs to get the max definition thumbnail
+### LIFE
+- Animation: meotashi https://www.meotashi.com/
+- Editing: Wicki Toons
+- 3D: Katsundra
+- + All mentionned in the YT description
+
+### BOOM
+- Evil 3D Model: jjinomu
+- 3D Production: Vshow
+- Thumbnail support: 琉光蔷薇Ruri
+
+### NEVER
+- Artworks: Letro
+- Character Animation: Miiko
+- Visuals: Vermii
