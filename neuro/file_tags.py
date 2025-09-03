@@ -10,7 +10,7 @@ from typing import Optional
 from loguru import logger
 from mutagen.flac import FLAC, Picture
 from mutagen.id3 import ID3
-from mutagen.id3._frames import APIC, TALB, TBPM, TDRL, TIT2, TKEY, TPE1, TPE2, TRCK, TSO2, TextFrame
+from mutagen.id3._frames import APIC, TALB, TBPM, TDRC, TDRL, TIT2, TKEY, TPE1, TPE2, TRCK, TSO2, TYER, TextFrame
 from PIL import Image
 
 from neuro import IMAGES_COVERS_DIR, IMAGES_CUSTOM_DIR, LOG_DIR, ROOT_DIR
@@ -125,8 +125,10 @@ class Song:
             TPE1(text=self.artist, encoding=3),
             # Album
             TALB(text=self.album, encoding=3),
-            # Year-Month-Day
+            # Year-Month-Day | Using all frames for different software compatibility
             TDRL(text=self.date, encoding=3),
+            TYER(text=self.date[:4], encoding=3),
+            TDRC(text=self.date, encoding=3),
             # Track number
             TRCK(text=f"{self.track_n}", encoding=3),
         ]
@@ -163,6 +165,8 @@ class Song:
             str: The artist. Can be Neuro-Sama, Evil Neuro, or Neuro [v1]/[v2].
         """
         # They are mutually exclusive so it's okay
+        if self.album in ["Extra", "Originals"]:
+            return "Neuro-Sama/Evil Neuro"
         if self.flags.v1:
             return "Neuro [v1]"
         if self.flags.v2:
@@ -196,8 +200,8 @@ class Song:
         if self.flags.neuro:
             return "Neuro"
         # A song must have the Neuro or Evil tag, if it has neither, raise an Error
-        logger.error(f"Song '{self.file}' has no tags to define its tag!")
-        raise ValueError(f"Song '{self.file}' has no tags to define its tag!")
+        logger.error(f"Song '{self.file}' has no flags to define its tag!")
+        raise ValueError(f"Song '{self.file}' has no flags to define its tag!")
 
     def file_name(self, custom: bool) -> str:
         """Returns the output filename using song properties.
