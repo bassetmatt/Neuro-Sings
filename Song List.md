@@ -1495,6 +1495,27 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 16. Culprate - Mechanic Heartbeat: 02:00:05
 17. David Bowie - Space Oddity: 02:06:49
 
+### 03-09-2025 (Evil) [here] (Link later)
+
+1. War - Sum 41
+2. DArkSide - Bring Me The Horizon
+3. Let It Die - STARSET
+4. Basket Case - Green Day
+5. Maniac - Michael Sembello
+6. ANTI THE∞HOLIC - CosMo [Duet]
+7. Demons - Imagine Dragons
+8. O Light - Kikuo
+9. Crawling - Linkin Park
+10. Butcher Vanity - Flavor Foley
+11. Good Luck, Babe! - Chappel Roan
+12. Free Bird - Lynyrd Skynyrd
+13. I'm Still Standing - Elton John
+14. FUEL - Utsu-P
+15. Wish I Had an Angel - Nightwish [Duet]
+16. Sweet Child O' Mine - Guns N' Roses
+17. Karma Police - Radiohead
+18. LET THE WORLD BURN - Chris Grey
+
 ## Collabs
 ### "Official" (not on stream, separate release)
 Put as special album: Collabs, list in order
