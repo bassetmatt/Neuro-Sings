@@ -6,6 +6,7 @@ from time import time
 from loguru import logger
 
 from neuro import DRIVE_DIR, LOG_DIR
+from neuro.checks import check_are_dbs_identical
 from neuro.detection import export_json, extract_all
 from neuro.file_tags import CustomSong, DriveSong
 from neuro.polars_utils import Preset, load_dates
@@ -66,6 +67,9 @@ def generate_songs() -> None:
 
     format_logger(log_file=LOG_DIR / "generation.log")
     logger.info("[GEN] Starting generation batch")
+
+    # Avoids wrong generations due to inconsistent databases
+    check_are_dbs_identical()
 
     # Loading config file
     with open("config.toml", "rb") as file:

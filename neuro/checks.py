@@ -91,6 +91,27 @@ def check_mp3gain() -> None:
         logger.info("Not checking for mp3gain as option isn't activated")
 
 
+def check_are_dbs_identical() -> None:
+    """Checks that both databases (SQLite and CSV) are identical"""
+    sqlite = load_db(as_db=True)
+    csv = load_db(as_db=False)
+    if len(sqlite) != len(csv):
+        logger.error("Databases have different number of entries")
+        return
+
+    if sqlite.columns != csv.columns:
+        logger.error("Databases have different columns")
+        return
+    for i, (row_sq, row_csv) in enumerate(zip(sqlite.rows(named=True), csv.rows(named=True))):
+        # row is a dictionary with the column names as keys
+        for key in row_sq.keys():
+            message = f"Row {i} differs between databases in column {key}: {row_sq[key]} != {row_csv[key]}"
+            if row_sq[key] != row_csv[key]:
+                logger.error(message)
+                return
+    logger.success("Both databases are identical")
+
+
 def all_tests() -> None:
     """Runs all checks defined in this file"""
     format_logger(log_file=LOG_DIR / "checks.log")
@@ -99,6 +120,7 @@ def all_tests() -> None:
     check_case("Song")
     check_hash()
     check_mp3gain()
+    check_are_dbs_identical()
 
 
 if __name__ == "__main__":
