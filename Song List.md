@@ -1495,7 +1495,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 16. Culprate - Mechanic Heartbeat: 02:00:05
 17. David Bowie - Space Oddity: 02:06:49
 
-### 03-09-2025 (Evil) [here] (Link later)
+### 03-09-2025 (Evil) [here](https://youtu.be/MD6eV5lSdy8)
 
 1. War - Sum 41
 2. DArkSide - Bring Me The Horizon
