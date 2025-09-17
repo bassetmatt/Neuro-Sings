@@ -1517,6 +1517,28 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 18. LET THE WORLD BURN - Chris Grey
 
 
+### 17-09-2025 (Neuro) [here] (link later)
+
+1. We Are the Champions - Queen [Duet]
+2. Take Me Hand - DAISHI DANCE
+3. Big Iron - Marty Robbins
+4. Thanks for being Lifeless - Pinocchio-P
+5. Vs. SAYU - James Landino
+6. Riptide - Vance Joy
+7. Jolene - Dolly Parton
+8. Relay Outer - inabakumori
+9. Shrimp Fried Rice! (You're Telling Me A SHRIMP Fried This Rice?!) - Jamie Paige
+10. Heaven Knows I'm Miserable Now - The Smiths
+11. Who will know - furusato - Yoko Takashi
+12. dark things - STARSET
+13. Wake Me Up When September Ends - Green Day
+14. Unfold - Porter Robinson [Duet]
+15. I was human - Picon
+16. Furthest Star - Dirt Poor Robins
+17. atrophy - monii [Duet]
+18. Kaleidoscope - Flower Face
+
+
 ## Collabs
 ### "Official" (not on stream, separate release)
 Put as special album: Collabs, list in order
