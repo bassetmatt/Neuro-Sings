@@ -157,6 +157,7 @@ def update_db() -> None:
     # Updates JSON file with treated songs removed
     with open(SONGS_JSON, "w") as f:
         json.dump(json_data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
 
     # Write modifications if both CSVs
     songs_df.write_csv(SONGS_CSV)

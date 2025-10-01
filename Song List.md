@@ -1476,7 +1476,6 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 18. BIRDS OF A FEATHER - Billie Eilish [Duet]
 
 ### 20-08-2025 (Twin) [here](https://youtu.be/XSJ_mbEXGVw)
-
 1. NewJeans - GODS: 07:17
 2. MONJOE - Divine: 14:37
 3. The Wanted - Chasing The Sun: 21:15
@@ -1496,7 +1495,6 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 17. David Bowie - Space Oddity: 02:06:49
 
 ### 03-09-2025 (Evil) [here](https://youtu.be/MD6eV5lSdy8)
-
 1. War - Sum 41
 2. DArkSide - Bring Me The Horizon
 3. Let It Die - STARSET
@@ -1517,7 +1515,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 18. LET THE WORLD BURN - Chris Grey
 
 
-### 17-09-2025 (Neuro) [here] (link later)
+### 17-09-2025 (Neuro) [here](https://youtu.be/Jrno_9DdQ1k)
 
 1. We Are the Champions - Queen [Duet]
 2. Take Me Hand - DAISHI DANCE
@@ -1537,6 +1535,26 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 16. Furthest Star - Dirt Poor Robins
 17. atrophy - monii [Duet]
 18. Kaleidoscope - Flower Face
+
+### 01-10-2025 (Evil) [here](https://youtu.be/0ragksm0i94)
+1. I love Rock N' Roll - Joan Jett & The Blackhearts
+2. House of Memories - Panic! At The Disco
+3. Necromantic - Akatsuki Records
+4. Paper Bouquet - Mili
+5. Big Time Rush - Big Time Rush [Duet]
+6. God Only Knows - bitbreaker
+7. Digital Girl - KIRA
+8. Hunting High and Low - A-ha
+9. Watercolour - Pendulum
+10. After Dark - Mr. Kitty
+11. Girl on Fire - Alicia Keys
+12. Still Here - Digital Daggers
+13. Jane Doe - Kenshi Yonezu & Hikaru Utada [Duet]
+14. Let It Go - Idina Menzel
+15. Emergence - Sleep Token
+16. Te o Tatake ima Koko De Inoru Dake Negau Dake - THE SPELLBOUND
+17. In The End - Linkin Park [Duet]
+18. The Pretender - Infected Mushroom
 
 
 ## Collabs

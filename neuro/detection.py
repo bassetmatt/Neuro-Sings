@@ -278,3 +278,4 @@ def export_json(all_songs: SongJSON) -> None:
 
     with open(SONGS_JSON, "w") as f:
         json.dump(songs, f, indent=2, ensure_ascii=False)
+        f.write("\n")
