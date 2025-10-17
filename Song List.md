@@ -1556,6 +1556,28 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 17. In The End - Linkin Park [Duet]
 18. The Pretender - Infected Mushroom
 
+### 15-10-2025 (Neuro) [here](https://youtu.be/nL-C7Wv5fwk)
+
+1. M@GICAL CURE! LOVE SHOT! - SAWTOWNE
+2. TruE - HOYO-MiX
+3. KNOCK YOURSELF OUT XD - Porter Robinson
+4. Hacking To The Gate - Ito Kanako
+5. No Surprises - Radiohead
+6. Everybody's Changing - Keane
+7. Heat Abnormal - Iyowa
+8. Here Comes The Sun - The Beatles
+9. Secret Base Kimi Ga Kureta Mono - Norihiko Machida [Duet]
+10. Show Me How - Men I Trust
+11. Blur - u32
+12. Lagtrain - inabakumori
+13. Free - RUMI & JINU [Duet]
+14. the perfect pair - beabadoobee
+15. Blue - Eiffel 65
+16. Ain't No Mountain High Enough - Marvin Gaye & Tammi Terrell [Duet]
+17. Headlock - Imogen Heap
+18. Dracula - Tame Impala
+19. MAGICAL CURE! ENCORE! - SAWTOWNE
+
 
 ## Collabs
 ### "Official" (not on stream, separate release)
