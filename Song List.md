@@ -836,7 +836,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 
 ### 17-04-2024 (Neuro) [here](https://youtu.be/g7kK04oplwU)
 1. TheFatRat - Mayday: 00:08:50
-2. Elliot Minibot - Together: 00:15:33
+2. Ellie Minibot - Together: 00:15:33
 3. Porter Robinson - Everything Goes On: 00:22:33
 4. Iyowa - kyu-kurarin: 00:28:30
 5. SIAMÉS - My Way: 00:34:43
