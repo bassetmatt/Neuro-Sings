@@ -34,7 +34,7 @@ mp3gain = true
 [[Presets]]
 name = "Old"
 include-flags = ["v1", "v2"]
-exclude-flags = ["duplicates"]
+exclude-flags = ["duplicate"]
 # From root
 path = "v1v2"
 mp3gain = false
