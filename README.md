@@ -1,6 +1,6 @@
 <div align="center">
 
-![Latest Karaoke](https://img.shields.io/badge/latest-2025--10--01-a)
+![Latest Karaoke](https://img.shields.io/badge/latest-2025--10--15-a)
 ![Python version](https://img.shields.io/badge/Python-3.12-%23306998?logo=python&labelColor=%23ffd43b)
 
 # Neuro-sing-DB
