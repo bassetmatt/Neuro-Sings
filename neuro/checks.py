@@ -91,24 +91,33 @@ def check_mp3gain() -> None:
         logger.info("Not checking for mp3gain as option isn't activated")
 
 
-def check_are_dbs_identical() -> None:
-    """Checks that both databases (SQLite and CSV) are identical"""
+def check_are_dbs_identical():
+    """Checks that both databases (SQLite and CSV) are identical.
+
+    Raises:
+        ValueError: If there are inconsistencies between databses.
+    """
     sqlite = load_db(as_db=True)
     csv = load_db(as_db=False)
     if len(sqlite) != len(csv):
         logger.error("Databases have different number of entries")
-        return
+        raise ValueError("Databases have different number of entries")
 
     if sqlite.columns != csv.columns:
         logger.error("Databases have different columns")
-        return
+        raise ValueError("Databases have different columns")
+
+    have_differences = False
     for i, (row_sq, row_csv) in enumerate(zip(sqlite.rows(named=True), csv.rows(named=True))):
         # row is a dictionary with the column names as keys
         for key in row_sq.keys():
             message = f"Row {i} differs between databases in column {key}: {row_sq[key]} != {row_csv[key]}"
             if row_sq[key] != row_csv[key]:
                 logger.error(message)
-                return
+                # Allows multiple errors to be reported at once
+                have_differences = True
+    if have_differences:
+        raise ValueError("Databases have different values")
     logger.success("Both databases are identical")
 
 

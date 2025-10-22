@@ -69,7 +69,11 @@ def generate_songs() -> None:
     logger.info("[GEN] Starting generation batch")
 
     # Avoids wrong generations due to inconsistent databases
-    check_are_dbs_identical()
+    try:
+        check_are_dbs_identical()
+    except ValueError as e:
+        logger.error("[GEN] Error while comparing Databases")
+        raise e
 
     # Loading config file
     with open("config.toml", "rb") as file:
