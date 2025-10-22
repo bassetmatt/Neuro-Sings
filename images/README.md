@@ -1,4 +1,6 @@
 # Images
+The cover arts are obviously not uploaded to github.
+
 ## Base background
 - Neuro
   - Hiyori
@@ -50,7 +52,7 @@ Defaults to 300x300. Trying to get better quality when possible
 - Rolling Girl
 
 ### Boop
-Images I got from checking [boop](https://www.youtube.com/@boop)'s Swarm FM.\
+Images I got from checking [boop](https://www.youtube.com/@boop)'s Swarm FM, now at [sw.arm.fm](https://player.sw.arm.fm)\
 For most of them I got the HQ image, otherwise it's 200x200.
 - CFRB: RiRi Creation [Youtube](https://youtu.be/D1f4VpzkvP8)
 - Cure for Me: mr.fish399 [Twitter](https://x.com/MrFish399/status/1883255094982091213)
@@ -63,6 +65,8 @@ For most of them I got the HQ image, otherwise it's 200x200.
 - Tententen: Copper1ion: [Youtube](https://youtu.be/TpallAS3y6k)
 - Knock yourself out: key [Twitter](https://x.com/soulgluttony/status/1938281277464990173#m)
 - Static: key [Discord](https://discord.com/channels/574720535888396288/1392656512081465384/1392656512081465384)
+- Something Comforting and Overwhelmed: key [Dicord](https://discord.com/channels/1327042091200807024/1387845265381265429/1387845265381265429)
+- Magical Cure: key [Twitter](https://x.com/soulgluttony/status/1980722175037595875)
 
 ### Other
 - Weiward: [Youtube](https://www.youtube.com/watch?v=AcmkFxdmgmA)
