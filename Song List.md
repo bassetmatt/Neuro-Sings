@@ -395,29 +395,30 @@ sounds of silence false report v2
 
 ### 08-06-2023 [here](https://youtu.be/gm2AUjZQc7o)
 
-1. 22:57 - 26:22 - Believer
-2. 31:45 - 35:48 - Purupuru Pururin
-3. 39:14 - 42:15 - Airplanes
-4. 45:49 - 49:02 - I Kissed a Girl
-5. 51:12 - 55:01 - Fireflies
-6. 57:41 - 59:48 - Ocean Man
-7. 1:02:20 - 1:06:11 - The Kill
-8. 1:10:56 - 1:14:44 - Can You Feel My Heart
-9. 1:17:26 - 1:21:29 - Luka Luka Night Fever
-10. 1:22:46 - 1:25:39 - Enemy
-11. 1:29:06 - 1:35:06 - Fluorite Eye's Song (favorite!)
-12. 1:38:00 - 1:41:23 - Gee
-13. 1:43:52 - 1:46:55 - AI Kotoba
-14. 1:48:34 - 1:52:16 - Revenge
-15. 1:54:58 - 1:57:16 - King
-16. 2:00:16 - 2:04:29 - Lagtrain
-17. 2:07:03 - 2:10:25 - I am Machine
-18. 2:13:30 - 2:16:13 - Mozaik Role
-19. 2:18:44 - 2:21:52 - Numb
-20. 2:24:20 - 2:27:44 - Moves Like Jagger
-21. 2:29:57 - 2:34:59 - Careless Whisper
-22. 2:39:15 - 2:43:14 - Unravel
-23. 2:45:39 - 2:49:30 - Let You Down
+1. 10:18 - 14:09 - Guitar, Loneliness and Blue Planet (Muted)
+2. 22:57 - 26:22 - Believer
+3. 31:45 - 35:48 - Purupuru Pururin
+4. 39:14 - 42:15 - Airplanes
+5. 45:49 - 49:02 - I Kissed a Girl
+6. 51:12 - 55:01 - Fireflies
+7. 57:41 - 59:48 - Ocean Man
+8. 1:02:20 - 1:06:11 - The Kill
+9. 1:10:56 - 1:14:44 - Can You Feel My Heart
+10. 1:17:26 - 1:21:29 - Luka Luka Night Fever
+11. 1:22:46 - 1:25:39 - Enemy
+12. 1:29:06 - 1:35:06 - Fluorite Eye's Song (favorite!)
+13. 1:38:00 - 1:41:23 - Gee
+14. 1:43:52 - 1:46:55 - AI Kotoba
+15. 1:48:34 - 1:52:16 - Revenge
+16. 1:54:58 - 1:57:16 - King
+17. 2:00:16 - 2:04:29 - Lagtrain
+18. 2:07:03 - 2:10:25 - I am Machine
+19. 2:13:30 - 2:16:13 - Mozaik Role
+20. 2:18:44 - 2:21:52 - Numb
+21. 2:24:20 - 2:27:44 - Moves Like Jagger
+22. 2:29:57 - 2:34:59 - Careless Whisper
+23. 2:39:15 - 2:43:14 - Unravel
+24. 2:45:39 - 2:49:30 - Let You Down
 
 
 ## v3 Karaoke Streams
@@ -1609,12 +1610,10 @@ Put as special album: Collabs, list in order
 - [x] 5. Bring me to life ft EMBER 27-10-2024
 
 ## Extra
-1. Bilibili 2024-09-15
-2. I don't want to be an engineer
-3. Bocchi solo
-4. Bocchi group
-5. Money Machine
-6. Queen x King boop mashup ?
+1. I don't want to be an engineer 2023-04-27
+2. [Seishun Complex](https://youtu.be/l1vehL9z_4g) intro v2 2023-05-27
+3. Money Machine 2023-11-12
+4. Bilibili 2024-09-15
 
 
 ## Theme Streams
