@@ -1579,6 +1579,25 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 18. Dracula - Tame Impala
 19. MAGICAL CURE! ENCORE! - SAWTOWNE
 
+### 29-10-2025 (Evil) [here](https://youtu.be/w_zi52ikYAA)
+1. Night of the Werewolves - Powerwolf
+2. Halloween of the Dead - Hatsuki Yura
+3. Somebody's Watching Me - Rockwell
+4. MASSACRE - SKARS
+5. This Is Halloween - Marilyn Manson [Duet]
+6. Turn The Lights Off - Tally Hall
+7. Jill-O'-Lantern - LadyMonsters
+8. Wicked - Crusher
+9. Dead Walk - Redhook
+10. Smoke and Mirrors - Jayn
+11. Crazy Scary Holy Fantasy - MYTH & ROID
+12. Ghostbusters - Ray Parker Jr. [Duet]
+13. Seas on of the Witch - Donovan
+14. bury a friend - Billie Eilish [Duet]
+15. Sp0w0ky 0w0ky Pumpkins - senzawa
+16. Evil Eye - Franz Ferdinand
+17. Sweet Dreams - Aviators
+18. Time Belongs to Us - Darren Korb [Duet]
 
 ## Collabs
 ### "Official" (not on stream, separate release)

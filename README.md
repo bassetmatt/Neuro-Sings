@@ -1,6 +1,6 @@
 <div align="center">
 
-![Latest Karaoke](https://img.shields.io/badge/latest-2025--10--15-a)
+![Latest Karaoke](https://img.shields.io/badge/latest-2025--10--29-a)
 ![Python version](https://img.shields.io/badge/Python-3.12-%23306998?logo=python&labelColor=%23ffd43b)
 
 # Neuro-sing-DB
@@ -51,8 +51,8 @@ Right now the drive has the presets described in `config.toml`. The main, v1/v2 
 - [x] Generate json `update-json`
 - [x] Sanitize json
   - [x] Check artists name, check coherency with database with queries
-  - [x] Set track number
-  - [x] ASCII check
+  - [X] Set track number
+  - [X] ASCII check
 - [x] Update the database `update-db`
 - [x] Check for errors again
 - [x] Run all checks `db-check`
