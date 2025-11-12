@@ -1599,6 +1599,26 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 17. Sweet Dreams - Aviators
 18. Time Belongs to Us - Darren Korb [Duet]
 
+### 12-11-2025 (Neuro)
+1. Marigold - M2U
+2. Iron Lotus - Mili
+3. Patchwork Staccato - Toa
+4. Wolves Without Teeth - Of Monsters and Men [Duet]
+5. Gentle On My Mind - Glen Campbell
+6. With or Without you - U2
+7. Shut Up and Dance - WALK THE MOON
+8. Tiny Litlle Adiantum - Shibayan Records
+9. DAMIDAMI - HOYO-MiX [Duet]
+10. The Less I Know The Better - Tame Impala
+11. Symbiosis - Dave Fridmann
+12. Circles - KIRA
+13. Imaginary Arcadia - nayuta
+14. The Chain - Fleetwood Mac [Duet]
+15. Time to Pretend - MGMT
+16. The Mechanical Girl - Aurelio Voltaire
+17. Russian Roulette - Porter Robinson
+18. Von - Pretty Patterns
+
 ## Collabs
 ### "Official" (not on stream, separate release)
 Put as special album: Collabs, list in order
