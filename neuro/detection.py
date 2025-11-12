@@ -125,6 +125,7 @@ def get_date(groups: dict[str, str]) -> str:
         str: The date with YYYY_MM_DD format. If no date was provided via regex, "outlier"\
             is returned.
     """
+    y, m, d = "", "", ""  # Avoids unbound variable error
     if "date_v1" in groups:  # v1 are M/D/Y
         date_pat = groups["date_v1"]
         if "-" in date_pat:
@@ -156,7 +157,7 @@ def extract_common(file: Path, regexes: list[str]) -> tuple[str, SongEntry]:
         tuple[str, SongEntry]: A tuple with the 'date' (can be "outlier") and the main info\
             about the song: artist, song title, the original file and an album id.
     """
-    data = {}
+    data, date = {}, ""  # Avoids unbound variable error
     for i, pat in enumerate(regexes):
         matched = re.match(pat, str(file.name))
         if matched is None:
@@ -176,7 +177,7 @@ def extract_common(file: Path, regexes: list[str]) -> tuple[str, SongEntry]:
             "id": None,
         }
         break  # Once a pattern matched, we stop looking for one
-    if date == {}:  # Date is always assigned if a pattern matched
+    if data == {}:  # Date is always assigned if a pattern matched
         logger.error(f"Couldn't find match for file '{file}'")
         raise ValueError
     return date, data

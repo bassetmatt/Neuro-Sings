@@ -1,6 +1,6 @@
 <div align="center">
 
-![Latest Karaoke](https://img.shields.io/badge/latest-2025--10--29-a)
+![Latest Karaoke](https://img.shields.io/badge/latest-2025--11--12-a)
 ![Python version](https://img.shields.io/badge/Python-3.12-%23306998?logo=python&labelColor=%23ffd43b)
 
 # Neuro-sing-DB
@@ -51,8 +51,8 @@ Right now the drive has the presets described in `config.toml`. The main, v1/v2 
 - [x] Generate json `update-json`
 - [x] Sanitize json
   - [x] Check artists name, check coherency with database with queries
-  - [X] Set track number
-  - [X] ASCII check
+  - [x] Set track number
+  - [x] ASCII check
 - [x] Update the database `update-db`
 - [x] Check for errors again
 - [x] Run all checks `db-check`
@@ -60,8 +60,8 @@ Right now the drive has the presets described in `config.toml`. The main, v1/v2 
   - [x] If not in the date png, add the new date
 - [x] Generate songs `songs-generate`
 - [x] Upload the result to the drive `drive-push`
-- [x] Post update on Discord
-- [x] Profit
+- [ ] Post update on Discord
+- [ ] Profit
 
 *Note*: Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"` is not a suitable filename but I want it as the artist's name on the metadata, hence the use of: `"Artist ASCII": "DECO 27"`.
 
@@ -163,7 +163,11 @@ Some examples are commented out.
 
 ## Credits
 - All artists for thumbnails are (to my knowledge) cited in [the images README](./images/README.md)
+
+### From Discord
 - Thanks to fujinshu for their work on identifying the key and tempo of songs
+- Thanks to zhe_vlach_varon for finding the many issues in track numbering
+- Thanks to ninjakai03 (mm2wood) and the people working on the other karaoke archive (from which I got the ARG songs) for their contribution (including pointing out missing songs)
 
 ## License
 <sup>
