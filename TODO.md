@@ -1,9 +1,9 @@
 # TODO
 ## High-prio
-- [ ] Add ARG songs, as a separate preset
-  - [ ] Find dates
-- [ ] Add roundabout from 1st subathon
-
+- [x] Add ARG songs, as a separate preset
+  - [x] Find dates
+- [x] Add roundabout from 1st subathon
+- [ ] See if I can use ID3 tags for a FLAC file (to merge most of the code + have access to the album artist tag)
 
 ## Mid-prio
 - [ ] Replace github screenshots with poweramp?

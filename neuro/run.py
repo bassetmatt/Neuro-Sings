@@ -36,6 +36,7 @@ def generate_from_preset(preset: Preset, dates_dict: DateDict) -> None:
 
     t = time()
     songs_filtered = preset.get_filtered_df()
+    N_SONGS = 0  # Avoids error if no songs are found
     for i, song_dict in enumerate(songs_filtered.iter_rows(named=True)):
         N_SONGS = len(songs_filtered)
 
@@ -130,6 +131,9 @@ def parse_mp3gain(config: dict) -> MP3ModeTuple:
                 type = MP3GainMode.GAIN
             case "tag":
                 type = MP3GainMode.TAG
+            case _ as x:
+                logger.error(f"Unknown mp3gain type '{x}'")
+                raise ValueError(f"Unknown mp3gain type '{x}'")
         mp3gain = (mode, type)
     else:
         mp3gain = (MP3GainMode.OFF, MP3GainMode.OFF)

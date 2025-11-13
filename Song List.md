@@ -1599,7 +1599,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 17. Sweet Dreams - Aviators
 18. Time Belongs to Us - Darren Korb [Duet]
 
-### 12-11-2025 (Neuro)
+### 12-11-2025 (Neuro) [here](https://youtu.be/4jqtSOaFq3Y)
 1. Marigold - M2U
 2. Iron Lotus - Mili
 3. Patchwork Staccato - Toa
@@ -1669,13 +1669,28 @@ Special album: Subathon covers
 
 ### Year 1
 1. Subathon Mashup
-2. Hey Neuro (Nee Neuro)
-3. Crossing fields
+2. Roundabout
+3. Hey Neuro (Nee Neuro)
+4. Crossing fields
 
 ### Year 2
-4. Subathon Mashup 2
-5. Viva la vida fallen Kingdom
+5. Subathon Mashup 2
+6. Viva la vida fallen Kingdom
 
 ## Originals
 1. LIFE (Neuro)
 2. BOOM (Evil)
+3. NEVER (Duet)
+
+## ARG Songs
+1. Numbers.mp3 | 2023-04-27
+2. I don't want to be an engineer.mp3 | 2023-04-27
+3. Fallen down.mp3 | 2023-04-27
+4. I think I saw a ghost.mp3 | 2023-04-27
+5. I'm not like the other girls.mp3 | 2023-04-27
+6. Numbers II.mp3 | 2023-06-02
+7. Public Static Void.mp3 | 2023-06-22
+8. [Filtered].mp3 | 2023-10-31
+9. Meaning of life.mp3 | 2023-12-02
+10. Candles.mp3 | 2024-09-24
+11. Numbers III.mp3 | 2024-10-13

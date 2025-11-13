@@ -24,7 +24,11 @@ class Song:
     @dataclass
     class Flags:
         v1: bool
+        """Neuro v1 voice"""
         v2: bool
+        """Neuro v2 voice"""
+        v3: bool
+        """Neuro/Evil v3 voice"""
         neuro: bool
         evil: bool
         duet: bool
@@ -34,6 +38,8 @@ class Song:
         """Use the same naming convention as drive files for filename"""
         as_custom: bool
         """Use the same naming convention as custom files for filename"""
+        arg: bool
+        """Songs from the ARG channel"""
 
     def init_flags(self, flags: Optional[str]) -> None:
         """Detects song's flags by searching substrings in the flags column.\
@@ -90,7 +96,7 @@ class Song:
 
         self.init_flags(song_dict["Flags"])
 
-    def create_out_file(self) -> None:
+    def create_out_file(self, *, out_dir: Path, create: bool = True) -> bool:
         """Virtual method"""
         raise NotImplementedError
 
@@ -165,7 +171,7 @@ class Song:
             str: The artist. Can be Neuro-Sama, Evil Neuro, or Neuro [v1]/[v2].
         """
         # They are mutually exclusive so it's okay
-        if self.album in ["Extra", "Originals"]:
+        if self.album in ["Extra", "Originals", "Subathons"]:
             return "Neuro-Sama/Evil Neuro"
         if self.flags.v1:
             return "Neuro [v1]"
@@ -173,6 +179,8 @@ class Song:
             return "Neuro [v2]"
         if self.flags.evil:
             return "Evil Neuro"
+        if self.flags.arg:
+            return "Study-sama"
         return "Neuro-Sama"
 
     @property
@@ -335,7 +343,7 @@ class CustomSong(Song):
         for frame in self.get_id3_frames():
             id3.add(frame)
 
-        if self.flags.as_drive:
+        if self.flags.as_drive or self.flags.arg:
             album_artist = self.album_artist
         else:
             album_artist = "Neuro-Sama/Evil Neuro"

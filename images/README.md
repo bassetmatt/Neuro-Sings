@@ -2,6 +2,8 @@
 The cover arts are obviously not uploaded to github.
 
 ## Base background
+Screens from streams
+
 - Neuro
   - Hiyori
   - Neuro (v2 Model)
@@ -74,6 +76,7 @@ For most of them I got the HQ image, otherwise it's 200x200.
 
 ## Subathon
 - Subathon Y1: OG Art (HQ) from [Discord](https://discord.com/channels/574720535888396288/1186847981459218433/1186847981459218433)
+  - Version with the signs from stream used as thumbnail for the roundabout cover
 - Subathon Y2: Screen (Decent quality)
 - Hey Neuro: Screen, animation by ppchan
 - Fallen Kingdom [this](https://discord.com/channels/574720535888396288/1376246629924999260/1376246629924999260)

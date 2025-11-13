@@ -55,13 +55,13 @@ exclude-flags = ["arg", "v3"]
 path = "duplicates"
 mp3gain = false
 
-# [[Presets]]
-# name = "ARG"
-# include-flags = ["arg"]
-# exclude-flags = []
-# #from root
-# path = "arg"
-# mp3gain = false
+[[Presets]]
+name = "ARG"
+include-flags = ["arg"]
+exclude-flags = []
+#from root
+path = "arg"
+mp3gain = false
 
 
 # Other examples of presets
