@@ -339,6 +339,7 @@ class CustomSong(Song):
     def apply_id3(self) -> None:
         """ID3 version of the metadata management. Similar to the one for Drive Songs."""
         id3 = ID3(self.outfile)
+        id3.delete()
 
         for frame in self.get_id3_frames():
             id3.add(frame)
