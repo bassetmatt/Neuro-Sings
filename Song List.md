@@ -1415,7 +1415,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 19. Evil Neuro - BOOM: 02:09:38
 
 
-### 09-07-2025 (Neuro) [here](https://youtu.be/bc54vGFvw-k)
+### 09-07-2025 (Neuro) [here](https://youtu.be/bc54vGFvw-k) <-- New mic
 1. Africa - Toto
 2. Bullet With Butterfly Wings - The Smashing Pumpkins
 3. Living Millennium - iyowa
@@ -1610,7 +1610,7 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 8. Tiny Litlle Adiantum - Shibayan Records
 9. DAMIDAMI - HOYO-MiX [Duet]
 10. The Less I Know The Better - Tame Impala
-11. Symbiosis - Dave Fridmann
+11. Symbiosis - The 1999
 12. Circles - KIRA
 13. Imaginary Arcadia - nayuta
 14. The Chain - Fleetwood Mac [Duet]
@@ -1618,6 +1618,27 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 16. The Mechanical Girl - Aurelio Voltaire
 17. Russian Roulette - Porter Robinson
 18. Von - Pretty Patterns
+
+### 26-11-2025 (Evil) [here](https://youtu.be/EUbQ5AxyqeM)
+
+1. KIRA - Ladylike: 06:02
+2. VIOLENT VIRA - You're not gone, You're just dead!: 12:29
+3. Mili - Sl0t: 18:05
+4. Muse - Hysteria: 25:48
+5. (Duet) Essenger & Cryoshell - As Above, So Below: 32:42
+6. cillia - Scattered Glass: 39:03
+7. Metric - Black Sheep: 46:06
+8. Europe - The Final Countdown: 53:45
+9. Red Vox - In The Garden: 01:01:54
+10. Citizen Soldier - Monster Made of Memories: 01:08:55
+11. Pinocchio-P - Love Attribute: 01:14:53
+12. The Living Tombstone - I Can't Fix You: 01:20:40
+13. (Duet) Blue Öyster Cult - (Don't Fear) The Reaper:  01:28:00
+14. Vane - Harlequin Contraption: 01:36:01
+15. Toby Fox & Itoki Hana - The Greatest Living Show: 01:42:18
+16. ALTERCLAD - Problems: 01:49:45
+17. Flawed Mangoes - Surreal: 01:56:44
+18. (Duet) Casey Edwards - Bury the Light:  02:04:22
 
 ## Collabs
 ### "Official" (not on stream, separate release)

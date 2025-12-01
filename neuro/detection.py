@@ -166,6 +166,7 @@ def extract_common(file: Path, regexes: list[str]) -> tuple[str, SongEntry]:
 
         groups = matched.groupdict()
         artist, song = get_artist_and_title(groups)
+
         date = get_date(groups)
         if date == "outlier":
             logger.warning(f"File '{file.name} is an outlier")
@@ -218,7 +219,7 @@ def extract_custom(files: list[Path], out: SongJSON = {}) -> SongJSON:
     """
     outputs = []
     for file in files:
-        filename = str(file.name).strip(file.suffix)
+        filename = file.stem
         # We can require this format for custom songs as the filename is chosen
         try:
             artist, song = map(str.strip, filename.split(" - "))

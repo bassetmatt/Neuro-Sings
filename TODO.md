@@ -4,6 +4,15 @@
   - [x] Find dates
 - [x] Add roundabout from 1st subathon
 - [ ] See if I can use ID3 tags for a FLAC file (to merge most of the code + have access to the album artist tag)
+- [ ] Check duets for last stream
+- [ ] Add 3D duplicates
+
+- [ ] Add Baka Mitai GX Aura collab https://www.youtube.com/watch?v=K4iLtHy7G2Q
+- [ ] Update thumbnail backgound
+  - [ ] New thumbnails for duets depending on who's the main singer
+  - [ ] Separate v3 cover before/after new neuro mic
+  - [ ] New classification for csv/db
+  - [ ] Update code in the reading (for generation) and writing (when reading JSON)
 
 ## Mid-prio
 - [ ] Replace github screenshots with poweramp?

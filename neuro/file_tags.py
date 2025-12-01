@@ -53,7 +53,8 @@ class Song:
         def flag_check(flag: str, flag_field: Optional[str]) -> bool:
             if flag_field is None:
                 return False
-            return flag in flag_field
+            flag_list = flag_field.split(";")
+            return flag in flag_list
 
         # Strange code, but just expands into `"v1": flags_check("v1", flags)`...
         # for all flags. It uses the fact that Flags fields are exactly the same
