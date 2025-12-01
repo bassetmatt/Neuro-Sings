@@ -4,7 +4,7 @@
   - [x] Find dates
 - [x] Add roundabout from 1st subathon
 - [ ] See if I can use ID3 tags for a FLAC file (to merge most of the code + have access to the album artist tag)
-- [ ] Check duets for last stream
+- [x] Check duets for last stream
 - [ ] Add 3D duplicates
 
 - [ ] Add Baka Mitai GX Aura collab https://www.youtube.com/watch?v=K4iLtHy7G2Q

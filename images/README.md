@@ -32,12 +32,16 @@ Screenshots from streams, maybe sometimes some light editing to fit both singers
 - Pirate
 
 ### Extra
-- Bilibili Concert: Random screen
-- I don't want to be an engineer
+- Aura collab
+- Bilibili Concert
 - Crossing Fields
 
 ### Other
 - Chinatown Blues
+
+### ARG
+- Picture of study sama
+
 
 ## Custom - Art
 ### Troobs

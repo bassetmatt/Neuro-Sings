@@ -1,6 +1,6 @@
 <div align="center">
 
-![Latest Karaoke](https://img.shields.io/badge/latest-2025--11--12-a)
+![Latest Karaoke](https://img.shields.io/badge/latest-2025--11--26-a)
 ![Python version](https://img.shields.io/badge/Python-3.12-%23306998?logo=python&labelColor=%23ffd43b)
 
 # Neuro-sing-DB
@@ -58,10 +58,10 @@ Right now the drive has the presets described in `config.toml`. The main, v1/v2 
 - [x] Run all checks `db-check`
 - [x] Generate new thumbnails `thumbnails-generate`
   - [x] If not in the date png, add the new date
-- [ ] Generate songs `songs-generate`
-- [ ] Upload the result to the drive `drive-push`
-- [ ] Post update on Discord
-- [ ] Profit
+- [x] Generate songs `songs-generate`
+- [x] Upload the result to the drive `drive-push`
+- [x] Post update on Discord
+- [x] Profit
 
 *Note*: Create manually the "Song ASCII" or "Artist ASCII" key in JSON if needed, they are fields for a sanitized name for filenames e.g. `"Artist": "DECO*27"` is not a suitable filename but I want it as the artist's name on the metadata, hence the use of: `"Artist ASCII": "DECO 27"`.
 

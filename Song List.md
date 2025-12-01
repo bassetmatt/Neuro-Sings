@@ -1670,8 +1670,8 @@ Put as special album: Collabs, list in order
 - [x] 5. Bring me to life ft EMBER 27-10-2024
 
 ## Extra
-1. I don't want to be an engineer 2023-04-27
-2. [Seishun Complex](https://youtu.be/l1vehL9z_4g) intro v2 2023-05-27
+1. V2 intro 2023-05-27 [Seishun Complex](https://youtu.be/nGmwH2ZYlP4) |  [OG Stream](https://youtu.be/l1vehL9z_4g)
+2. Baka Mitai 2023-09-03
 3. Money Machine 2023-11-12
 4. Bilibili 2024-09-15
 
