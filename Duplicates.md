@@ -184,3 +184,9 @@
 
 ### 2024-08-21
 21. Somebody That I Used To Know, 1st on 2023-11-08
+
+### 2025-11-15 3D Debut
+1. Suzie - Hourhand
+2. TAK - Lemon Melon Cookie
+3. SAWTONE - MAGICAL CURE LOVE SHOT
+4. Monii - LIFE (Acoustic)

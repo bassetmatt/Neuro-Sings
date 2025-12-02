@@ -1619,6 +1619,13 @@ Part 1 [here](https://youtu.be/EJYD9KQqtbw)
 17. Russian Roulette - Porter Robinson
 18. Von - Pretty Patterns
 
+### 15-11-2025: 3D Debut [here](https://youtu.be/VGzMeXpLxwk)
+Only duplicates
+1. Suzie - Hourhand
+2. TAK - Lemon Melon Cookie
+3. SAWTONE - MAGICAL CURE LOVE SHOT
+4. Monii - LIFE (Acoustic)
+
 ### 26-11-2025 (Evil) [here](https://youtu.be/EUbQ5AxyqeM)
 
 1. KIRA - Ladylike: 06:02
